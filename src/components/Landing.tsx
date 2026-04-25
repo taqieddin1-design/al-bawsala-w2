@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { Compass, BookOpen, Globe2, TrendingUp, ArrowRight } from 'lucide-react';
+import { Compass, BookOpen, Globe2, TrendingUp, ArrowRight, Book, GraduationCap } from 'lucide-react';
 import Auth from './Auth';
 
 export default function Landing() {
   const [showAuth, setShowAuth] = useState(false);
+  const [toastMsg, setToastMsg] = useState('');
+
+  const handleProtectedAction = (msg: string) => {
+    setToastMsg(msg);
+    setTimeout(() => {
+      setToastMsg('');
+      setShowAuth(true);
+    }, 2000);
+  };
 
   if (showAuth) {
     return (
@@ -40,6 +49,13 @@ export default function Landing() {
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-60"></div>
       </div>
+
+      {/* Toast Notification */}
+      {toastMsg && (
+        <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-rose-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold animate-float flex items-center gap-2">
+          {toastMsg}
+        </div>
+      )}
 
       {/* Navbar */}
       <nav className="relative z-20 p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
@@ -114,6 +130,46 @@ export default function Landing() {
           </div>
         </div>
       </main>
+
+      {/* Platform Sections */}
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pb-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">أقسام المنصة</h2>
+          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">تصفح محتوى المنصة وابدأ رحلتك التعليمية. بعض الأقسام تتطلب تسجيل الدخول للوصول إليها.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div 
+            onClick={() => handleProtectedAction('يرجى تسجيل الدخول أولاً للوصول إلى دوسية البوصلة.')}
+            className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:border-emerald-200 dark:hover:border-emerald-600/50 cursor-pointer transition-all transform hover:-translate-y-2 group"
+          >
+            <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+              <Book size={32} />
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">دوسية البوصلة في علوم الأرض</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">دروس شاملة، أمثلة توضيحية، ومحتوى متكامل لضمان تفوقك في المادة مع تجربة قراءة ممتعة وتفاعلية.</p>
+            <div className="flex items-center text-emerald-600 dark:text-emerald-400 font-bold group-hover:translate-x-[-8px] transition-transform w-fit rtl:group-hover:translate-x-2">
+              <span className="ml-2">تصفح الدوسية</span>
+              <ArrowRight size={20} className="transform rotate-180" />
+            </div>
+          </div>
+
+          <div 
+            onClick={() => handleProtectedAction('يرجى تسجيل الدخول أولاً للوصول إلى الاختبارات الإلكترونية.')}
+            className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:border-sky-200 dark:hover:border-sky-600/50 cursor-pointer transition-all transform hover:-translate-y-2 group"
+          >
+            <div className="w-16 h-16 bg-sky-100 dark:bg-sky-900/50 rounded-2xl flex items-center justify-center mb-6 text-sky-600 dark:text-sky-400 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+              <GraduationCap size={32} />
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">الاختبارات الإلكترونية</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">اختبر معلوماتك وقيم مستواك من خلال مجموعة متنوعة من الاختبارات التفاعلية المصممة لقياس فهمك بدقة.</p>
+            <div className="flex items-center text-sky-600 dark:text-sky-400 font-bold group-hover:translate-x-[-8px] transition-transform w-fit rtl:group-hover:translate-x-2">
+              <span className="ml-2">ابدأ الاختبارات</span>
+              <ArrowRight size={20} className="transform rotate-180" />
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Footer */}
       <footer className="text-center text-gray-500 dark:text-gray-400 pb-8 mt-12 text-sm z-10 relative">

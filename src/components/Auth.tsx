@@ -3,7 +3,10 @@ import { auth } from '../lib/firebase';
 import { 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword,
-  updateProfile
+  updateProfile,
+  setPersistence,
+  browserLocalPersistence,
+  browserSessionPersistence
 } from 'firebase/auth';
 
 interface AuthProps {
@@ -17,6 +20,7 @@ export default function Auth({ onSuccess }: AuthProps) {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +28,8 @@ export default function Auth({ onSuccess }: AuthProps) {
     setLoading(true);
 
     try {
+      await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence);
+      
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
         onSuccess();
@@ -119,10 +125,23 @@ export default function Auth({ onSuccess }: AuthProps) {
               </div>
             </div>
 
+            <div className="flex items-center">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+              />
+              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900 mr-2 border-r-0">
+                تذكرني محتفظاً بتسجيل الدخول
+              </label>
+            </div>
+
             {error && (
               <div className="text-rose-600 text-sm font-medium bg-rose-50 p-3 rounded text-center border border-rose-100">
                 {error}
-                <div className="mt-1 text-xs text-rose-500">ملاحظة: يجب تفعيل تسجيل الدخول بالبريد الإلكتروني وكلمة المرور في منصة Firebase.</div>
               </div>
             )}
 
