@@ -12,6 +12,37 @@
   }
 }
 
+@keyframes panBackground {
+  0% { transform: scale(1.1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(-2%, 2%); }
+  100% { transform: scale(1.1) translate(0, 0); }
+}
+
+@keyframes floatElement {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.animate-pan-bg {
+  animation: panBackground 30s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatElement 6s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+}
+html.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.015) 1px, transparent 1px);
+}
+
 /* Dark mode generic overrides for content boxes */
 html.dark .bg-amber-50, html.dark .bg-sky-50, html.dark .bg-emerald-50, html.dark .bg-rose-50, html.dark .bg-indigo-50, html.dark .bg-teal-50, html.dark .bg-orange-50 {
   background-color: var(--color-gray-800);

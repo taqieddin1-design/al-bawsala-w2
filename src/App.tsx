@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { auth } from './lib/firebase';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
 import Auth from './components/Auth';
+import Landing from './components/Landing';
 
 import Intro from './content/Intro';
 import Lesson1 from './content/Lesson1';
@@ -79,7 +80,7 @@ export default function App() {
   }
 
   if (!user) {
-    return <Auth onSuccess={() => {}} />;
+    return <Landing />;
   }
 
   const sections = [
