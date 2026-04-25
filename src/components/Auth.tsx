@@ -37,8 +37,8 @@ export default function Auth({ onSuccess }: AuthProps) {
     } catch (err: any) {
       if (err.code === 'auth/email-already-in-use') {
         setError('هذا البريد الإلكتروني مسجل مسبقاً.');
-      } else if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
-        setError('خطأ في البريد الإلكتروني أو كلمة المرور.');
+      } else if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+        setError('بيانات الدخول غير صحيحة، تأكد من البريد الإلكتروني وكلمة المرور أو قم بإنشاء حساب جديد.');
       } else if (err.code === 'auth/weak-password') {
         setError('كلمة المرور ضعيفة. يجب أن تتكون من 6 أحرف على الأقل.');
       } else {

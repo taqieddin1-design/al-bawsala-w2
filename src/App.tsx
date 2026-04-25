@@ -30,7 +30,7 @@ import Unit4_Review from './content/Unit4_Review';
 
 import Glossary from './content/Glossary';
 
-import { Printer, LogOut, Moon, Sun } from 'lucide-react';
+import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap } from 'lucide-react';
 import Comments from './components/Comments';
 import SectionWrapper from './components/SectionWrapper';
 import ProgressIndicator from './components/ProgressIndicator';
@@ -38,6 +38,7 @@ import ProgressIndicator from './components/ProgressIndicator';
 export default function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeView, setActiveView] = useState<'dashboard' | 'dossier'>('dashboard');
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark';
@@ -114,7 +115,9 @@ export default function App() {
   return (
     <div className="font-sans text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-900 min-h-screen relative transition-colors duration-200" dir="rtl">
       
-      <ProgressIndicator totalSections={sections.length} />
+      {activeView === 'dossier' && (
+        <ProgressIndicator totalSections={sections.length} />
+      )}
       
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 left-6 z-50 no-print flex gap-3 flex-col sm:flex-row">
@@ -138,33 +141,78 @@ export default function App() {
             تسجيل الخروج
           </span>
         </button>
-        <button 
-          onClick={handlePrint}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center group border border-emerald-700"
-          title="طباعة إلى PDF"
-        >
-          <Printer size={28} />
-          <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out px-0 group-hover:px-2 font-bold text-lg">
-            تصدير PDF
-          </span>
-        </button>
+        {activeView === 'dossier' && (
+          <button 
+            onClick={handlePrint}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center group border border-emerald-700"
+            title="طباعة إلى PDF"
+          >
+            <Printer size={28} />
+            <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out px-0 group-hover:px-2 font-bold text-lg">
+              تصدير PDF
+            </span>
+          </button>
+        )}
       </div>
 
-      {/* Main Print Container */}
-      <div className="print-container bg-gray-50 dark:bg-gray-900 print:bg-white overflow-hidden pb-20 pt-8">
-        <div className="text-center no-print mb-8 space-y-2">
-          <h1 className="text-3xl font-extrabold text-emerald-700 dark:text-emerald-400">مرحباً {user.displayName || 'يا صديقي الطموح'}</h1>
-          <p className="text-gray-500 dark:text-gray-400">لنكمل معاً رحلة التفوق والنجاح!</p>
+      {activeView === 'dashboard' && (
+        <div className="max-w-7xl mx-auto px-6 py-12 pt-20">
+          <div className="mb-10 text-center sm:text-right">
+            <h1 className="text-4xl font-extrabold text-emerald-700 dark:text-emerald-400 mb-2">مرحباً بك، {user.displayName || 'يا مبدع'}!</h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">اختر القسم الذي تود دراسته اليوم</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div 
+              onClick={() => setActiveView('dossier')}
+              className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg cursor-pointer transition-all transform hover:-translate-y-2 group"
+            >
+              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                <Book size={32} />
+              </div>
+              <h2 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white">دوسية البوصلة في علوم الأرض</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">دروس شاملة، أمثلة توضيحية، ومحتوى متكامل لضمان تفوقك في المادة.</p>
+              <div className="flex items-center text-emerald-600 dark:text-emerald-400 font-bold">
+                <span>تصفح الدوسية</span>
+                <ChevronRight className="mr-2" size={20} />
+              </div>
+            </div>
+
+            <div className="bg-gray-100 dark:bg-gray-800/40 p-8 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-700 opacity-70 flex flex-col items-center justify-center text-center">
+              <GraduationCap size={48} className="text-gray-400 dark:text-gray-500 mb-4" />
+              <h2 className="text-xl font-bold mb-2 text-gray-600 dark:text-gray-400">الاختبارات الإلكترونية</h2>
+              <span className="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-bold mt-2">قريباً</span>
+            </div>
+          </div>
         </div>
+      )}
 
-        {sections.map((section) => (
-          <SectionWrapper key={section.id} id={section.id} title={section.title}>
-            {section.component}
-          </SectionWrapper>
-        ))}
-        
-        <Comments />
-      </div>
+      {activeView === 'dossier' && (
+        <div className="print-container bg-gray-50 dark:bg-gray-900 print:bg-white overflow-hidden pb-20 pt-8">
+          <div className="max-w-4xl mx-auto px-6 mb-8 no-print pb-4 border-b border-gray-200 dark:border-gray-800">
+            <button 
+              onClick={() => setActiveView('dashboard')}
+              className="flex items-center gap-2 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 font-bold transition-colors bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-700 w-fit"
+            >
+              <ChevronRight size={20} /> العودة للأقسام
+            </button>
+          </div>
+
+          <div className="text-center no-print mb-12 space-y-4">
+            <div className="inline-block bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300 px-4 py-1.5 rounded-full font-bold text-sm mb-2">الدراسة الذاتية</div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-emerald-700 dark:text-emerald-400">دوسية البوصلة</h1>
+            <p className="text-xl text-gray-500 dark:text-gray-400">في علوم الأرض والبيئة</p>
+          </div>
+
+          {sections.map((section) => (
+            <SectionWrapper key={section.id} id={section.id} title={section.title}>
+              {section.component}
+            </SectionWrapper>
+          ))}
+          
+          <Comments />
+        </div>
+      )}
 
     </div>
   );
