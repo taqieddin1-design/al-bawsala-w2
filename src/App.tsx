@@ -30,7 +30,7 @@ import Unit4_Review from './content/Unit4_Review';
 
 import Glossary from './content/Glossary';
 
-import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap } from 'lucide-react';
+import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap, Facebook, Instagram } from 'lucide-react';
 import Comments from './components/Comments';
 import SectionWrapper from './components/SectionWrapper';
 import ProgressIndicator from './components/ProgressIndicator';
@@ -64,6 +64,25 @@ export default function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleBeforePrint = () => {
+      document.documentElement.classList.remove('dark');
+    };
+    const handleAfterPrint = () => {
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+      }
+    };
+
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, [darkMode]);
+
   const handlePrint = () => {
     window.print();
   };
@@ -81,7 +100,7 @@ export default function App() {
   }
 
   if (!user) {
-    return <Landing />;
+    return <Landing darkMode={darkMode} setDarkMode={setDarkMode} />;
   }
 
   const sections = [
@@ -149,7 +168,7 @@ export default function App() {
           >
             <Printer size={28} />
             <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out px-0 group-hover:px-2 font-bold text-lg">
-              تصدير PDF
+              تحميل الدوسية بي دي اف
             </span>
           </button>
         )}
@@ -213,6 +232,40 @@ export default function App() {
           <Comments />
         </div>
       )}
+
+      {/* Footer */}
+      <footer className="z-10 relative mt-12 pb-8 border-t border-gray-200 dark:border-gray-800 pt-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md no-print">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
+          <p className="text-gray-700 dark:text-gray-300 font-bold text-center text-lg">
+            يسعدني زيارتكم ومتابعتكم لحساباتي!
+          </p>
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://www.instagram.com/taqi_eddin.aburezeq" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-500 text-white rounded-2xl hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all transform hover:-translate-y-1"
+              aria-label="Instagram"
+              title="حساب الانستغرام"
+            >
+              <Instagram size={28} />
+            </a>
+            <a 
+              href="https://www.facebook.com/share/1CihPUVJk6/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-[#1877F2] text-white rounded-2xl hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1"
+              aria-label="Facebook"
+              title="حساب الفيسبوك"
+            >
+              <Facebook size={28} />
+            </a>
+          </div>
+          <p className="text-center text-gray-500 dark:text-gray-500 text-sm mt-4">
+            جميع الحقوق محفوظة &copy; منصة البوصلة التعليمية
+          </p>
+        </div>
+      </footer>
 
     </div>
   );

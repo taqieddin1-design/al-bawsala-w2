@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { Compass, BookOpen, Globe2, TrendingUp, ArrowRight, Book, GraduationCap } from 'lucide-react';
+import { Compass, BookOpen, Globe2, TrendingUp, ArrowRight, Book, GraduationCap, Facebook, Instagram, Sun, Moon } from 'lucide-react';
 import Auth from './Auth';
 
-export default function Landing() {
+interface LandingProps {
+  darkMode?: boolean;
+  setDarkMode?: (val: boolean) => void;
+}
+
+export default function Landing({ darkMode, setDarkMode }: LandingProps) {
   const [showAuth, setShowAuth] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
 
@@ -59,26 +64,37 @@ export default function Landing() {
 
       {/* Navbar */}
       <nav className="relative z-20 p-6 flex justify-between items-center max-w-7xl mx-auto w-full">
-        <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
-           <Compass size={36} className="text-emerald-600 dark:text-emerald-400" />
-           <span className="text-2xl font-extrabold tracking-tight">البوصلة</span>
+        <div className="flex items-center gap-3 text-emerald-700 dark:text-emerald-400">
+           <Compass size={56} className="text-emerald-600 dark:text-emerald-400" />
+           <span className="text-4xl font-extrabold tracking-tight">البوصلة</span>
         </div>
-        <button 
-          onClick={() => setShowAuth(true)}
-          className="px-6 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-emerald-700 dark:text-emerald-400 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-gray-700 rounded-full font-bold transition-all shadow-sm"
-        >
-          تسجيل الدخول / إنشاء حساب
-        </button>
+        <div className="flex items-center gap-3">
+          {setDarkMode && (
+            <button 
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-gray-700 rounded-full transition-all shadow-sm flex items-center justify-center"
+              title={darkMode ? 'الوضع النهاري' : 'الوضع الليلي'}
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          )}
+          <button 
+            onClick={() => setShowAuth(true)}
+            className="px-6 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-emerald-700 dark:text-emerald-400 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-gray-700 rounded-full font-bold transition-all shadow-sm"
+          >
+            تسجيل الدخول / إنشاء حساب
+          </button>
+        </div>
       </nav>
 
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-6 py-12 md:py-20 grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-8 relative z-10">
-          <div className="inline-block px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-bold border border-emerald-200 dark:border-emerald-800/50">
-            المنصة التعليمية الأولى لعلوم الأرض
+          <div className="inline-block px-6 py-2.5 bg-emerald-600 dark:bg-emerald-700 text-white rounded-full text-lg md:text-xl font-extrabold shadow-md shadow-emerald-500/30 animate-pulse-slow">
+            المنصة التعليمية الأولى لمادة علوم الأرض
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white">
-            اكتشف أسرار <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">الأرض والبيئة</span>
+            بوصلتك نحو <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">التفوق في مادة علوم الأرض</span>
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">
             رحلة ممتعة وتفاعلية لفهم الظواهر الجيولوجية، التغير المناخي، والبيئة المحيطة بك من خلال دروس مبسطة، صور توضيحية، وتمارين تفاعلية متطورة.
@@ -178,8 +194,37 @@ export default function Landing() {
       </section>
       
       {/* Footer */}
-      <footer className="text-center text-gray-500 dark:text-gray-400 pb-8 mt-12 text-sm z-10 relative">
-        جميع الحقوق محفوظة &copy; منصة البوصلة التعليمية
+      <footer className="z-10 relative mt-12 pb-8 border-t border-gray-200 dark:border-gray-800 pt-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
+          <p className="text-gray-700 dark:text-gray-300 font-bold text-center text-lg">
+            يسعدني زيارتكم ومتابعتكم لحساباتي!
+          </p>
+          <div className="flex items-center gap-6">
+            <a 
+              href="https://www.instagram.com/taqi_eddin.aburezeq" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-500 text-white rounded-2xl hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all transform hover:-translate-y-1"
+              aria-label="Instagram"
+              title="حساب الانستغرام"
+            >
+              <Instagram size={28} />
+            </a>
+            <a 
+              href="https://www.facebook.com/share/1CihPUVJk6/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-[#1877F2] text-white rounded-2xl hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1"
+              aria-label="Facebook"
+              title="حساب الفيسبوك"
+            >
+              <Facebook size={28} />
+            </a>
+          </div>
+          <p className="text-center text-gray-500 dark:text-gray-500 text-sm mt-4">
+            جميع الحقوق محفوظة &copy; منصة البوصلة التعليمية
+          </p>
+        </div>
       </footer>
     </div>
   );
