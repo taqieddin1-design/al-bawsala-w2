@@ -98,20 +98,26 @@ export default function Landing() {
         <div className="relative z-10">
           <div className="absolute inset-0 bg-gradient-to-tr from-emerald-200 to-sky-100 dark:from-emerald-900/40 dark:to-sky-800/40 rounded-3xl transform rotate-3 scale-105 opacity-60 blur-2xl animate-float"></div>
           <div className="relative grid grid-cols-2 gap-4 animate-float">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col gap-4 transform translate-y-8 transition-transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center text-sky-600 dark:text-sky-400">
-                <Globe2 size={24} />
+            <div 
+              onClick={() => handleProtectedAction('يرجى تسجيل الدخول أولاً للوصول إلى دوسية البوصلة.')}
+              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col gap-4 transform translate-y-8 transition-all hover:-translate-y-2 cursor-pointer hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-xl group"
+            >
+              <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 rounded-xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
+                <Book size={24} />
               </div>
-              <h3 className="font-bold text-lg dark:text-gray-100">علوم الأرض</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">تعرف على تشوه الصخور، الصدوع، الطيات والزلازل والمزيد.</p>
+              <h3 className="font-bold text-lg dark:text-gray-100 leading-tight">دوسية البوصلة<br/>في علوم الأرض</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">محتوى متكامل وشامل لضمان تفوقك في المادة.</p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col gap-4 transition-transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-rose-100 dark:bg-rose-900/40 rounded-xl flex items-center justify-center text-rose-600 dark:text-rose-400">
-                <TrendingUp size={24} />
+            <div 
+              onClick={() => handleProtectedAction('يرجى تسجيل الدخول أولاً للوصول إلى الاختبارات الإلكترونية.')}
+              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col gap-4 transition-all hover:-translate-y-2 cursor-pointer hover:border-sky-300 dark:hover:border-sky-700 hover:shadow-xl group"
+            >
+              <div className="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 rounded-xl flex items-center justify-center text-sky-600 dark:text-sky-400 group-hover:scale-110 transition-transform">
+                <GraduationCap size={24} />
               </div>
-              <h3 className="font-bold text-lg dark:text-gray-100">التغير المناخي</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">اكتشف أثر الأنشطة البشرية على مناخ كوكبنا وحساب الانبعاثات.</p>
+              <h3 className="font-bold text-lg dark:text-gray-100 leading-tight">الاختبارات<br/>الإلكترونية</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">اختبر معلوماتك وقيم مستواك من خلال اختبارات تفاعلية.</p>
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col gap-4 transform translate-y-4 transition-transform hover:-translate-y-2">
