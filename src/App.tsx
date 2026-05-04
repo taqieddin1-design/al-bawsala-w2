@@ -39,7 +39,6 @@ export default function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState<'dashboard' | 'dossier'>('dashboard');
-  const [showPrintModal, setShowPrintModal] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark';
@@ -84,8 +83,8 @@ export default function App() {
     };
   }, [darkMode]);
 
-  const handlePrint = () => {
-    setShowPrintModal(true);
+  const handleDownload = () => {
+    window.print();
   };
 
   const handleLogout = () => {
@@ -163,13 +162,13 @@ export default function App() {
         </button>
         {activeView === 'dossier' && (
           <button 
-            onClick={handlePrint}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center group border border-emerald-700"
-            title="طباعة إلى PDF"
+            onClick={handleDownload}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center group border border-emerald-700 font-sans"
+            title="تنزيل الدوسية كـ PDF"
           >
-            <Printer size={28} />
+            <FileDown size={28} />
             <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out px-0 group-hover:px-2 font-bold text-lg">
-              تحميل الدوسية بي دي اف
+              تنزيل الدوسية
             </span>
           </button>
         )}
@@ -268,88 +267,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Print/Download Modal */}
-      {showPrintModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm no-print" dir="rtl">
-          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden border border-gray-100 dark:border-gray-700 transform transition-all">
-            <div className="p-6 sm:p-8">
-              <div className="flex justify-between items-start mb-6">
-                <div className="bg-sky-100 dark:bg-sky-900/50 p-3 rounded-2xl text-sky-600 dark:text-sky-400">
-                  <FileDown size={32} />
-                </div>
-                <button 
-                  onClick={() => setShowPrintModal(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-full transition-colors"
-                >
-                  <X size={24} />
-                </button>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                تحميل الدوسية PDF
-              </h3>
-              
-              <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50 rounded-2xl p-4 mb-6">
-                <div className="flex gap-3 text-amber-800 dark:text-amber-300 items-start">
-                  <Info className="shrink-0 mt-0.5" size={20} />
-                  <p className="text-sm leading-relaxed">
-                    للحفاظ على جودة الخطوط العربية وتنسيقات الجداول والرسومات، يرجى استخدام <strong>خاصية الطباعة في المتصفح وحفظ الملف كـ PDF</strong> بدلاً من التحميل المباشر.
-                  </p>
-                </div>
-              </div>
 
-              <div className="space-y-4 text-gray-600 dark:text-gray-300 mb-8">
-                <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">1</div>
-                  <p className="mt-1">
-                    {window.self !== window.top ? (
-                      <span>قم بفتح التطبيق في <strong>نافذة جديدة</strong> إذا كنت داخل المعاينة.</span>
-                    ) : (
-                      <span className="line-through text-gray-400">قم بفتح التطبيق في نافذة جديدة (لقد قمت بذلك بالفعل ✅).</span>
-                    )}
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">2</div>
-                  <p className="mt-1">اضغط على زر الطباعة بالأسفل، أو استخدم الاختصار <strong>Ctrl + P</strong>.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">3</div>
-                  <p className="mt-1">اختر <strong>"حفظ بتنسيق PDF" (Save as PDF)</strong> من قائمة الطابعات.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">4</div>
-                  <p className="mt-1">تأكد من تفعيل خيار <strong>"رسومات الخلفية" (Background graphics)</strong> في إعدادات الطباعة.</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3">
-                {window.self !== window.top && (
-                  <a 
-                    href={window.location.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-bold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-                  >
-                    فتح في نافذة جديدة
-                    <ExternalLink size={18} />
-                  </a>
-                )}
-                <button 
-                  onClick={() => {
-                    setShowPrintModal(false);
-                    setTimeout(() => window.print(), 100);
-                  }}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-sky-600 text-white rounded-xl font-bold hover:bg-sky-700 transition-colors"
-                >
-                  الاستمرار للطباعة (حفظ كـ PDF)
-                  <Printer size={18} />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
     </div>
   );
