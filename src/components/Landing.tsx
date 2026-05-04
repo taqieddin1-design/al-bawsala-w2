@@ -96,6 +96,12 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white">
             بوصلتك نحو <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">التفوق في مادة علوم الأرض</span>
           </h1>
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gray-50 dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700/50 shadow-sm">
+            <span className="flex h-3 w-3 rounded-full bg-emerald-500"></span>
+            <p className="text-lg md:text-xl font-bold text-gray-800 dark:text-gray-200">
+              بإشراف الأستاذ: <span className="text-emerald-600 dark:text-teal-400">تقي الدين جهاد أبو رزق</span>
+            </p>
+          </div>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">
             رحلة ممتعة وتفاعلية لفهم الظواهر الجيولوجية، التغير المناخي، والبيئة المحيطة بك من خلال دروس مبسطة، صور توضيحية، وتمارين تفاعلية متطورة.
           </p>

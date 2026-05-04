@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export default function Intro() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center py-20 page-break">
+    <div className="flex flex-col justify-center items-center py-20 print:py-32">
       <motion.div 
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

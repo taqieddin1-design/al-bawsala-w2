@@ -207,7 +207,7 @@ export default function App() {
       )}
 
       {activeView === 'dossier' && (
-        <div className="print-container bg-gray-50 dark:bg-gray-900 print:bg-white overflow-hidden pb-20 pt-8">
+        <div className="print-container bg-gray-50 dark:bg-gray-900 print:bg-white overflow-hidden print:overflow-visible pb-20 pt-8">
           <div className="max-w-4xl mx-auto px-6 mb-8 no-print pb-4 border-b border-gray-200 dark:border-gray-800">
             <button 
               onClick={() => setActiveView('dashboard')}

@@ -4,7 +4,7 @@ import { Award, BookOpen, AlertCircle } from 'lucide-react';
 
 export default function Unit4_Review() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 page-break" id="u4-review">
+    <div className="max-w-4xl mx-auto px-4 py-8" id="u4-review">
       <LessonHeader 
         number={4} 
         title="الإثراء ومراجعة الوحدة الرابعة" 

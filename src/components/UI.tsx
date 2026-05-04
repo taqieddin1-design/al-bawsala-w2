@@ -113,7 +113,7 @@ export const ExerciseBox = ({
 };
 
 export const LessonHeader = ({ number, title, objective }: { number: number, title: string, objective: string }) => (
-  <div className="mb-10 text-center relative prevent-break page-break mt-16 pt-8 border-t-2 border-dashed border-gray-200">
+  <div className="mb-10 text-center relative prevent-break mt-16 pt-8 border-t-2 border-dashed border-gray-200">
     <div className="inline-block bg-sky-600 text-white font-bold px-6 py-2 rounded-full mb-4 shadow-md">
       الدرس {number}
     </div>
@@ -125,7 +125,7 @@ export const LessonHeader = ({ number, title, objective }: { number: number, tit
 );
 
 export const MathBox = ({ children }: { children: React.ReactNode }) => (
-  <div className="bg-gray-800 text-emerald-400 p-4 rounded-xl font-mono text-left my-4 text-lg overflow-x-auto shadow-inner" dir="ltr">
+  <div className="bg-gray-800 text-emerald-400 p-4 rounded-xl font-mono text-left my-4 text-lg overflow-x-auto shadow-inner prevent-break" dir="ltr">
     {children}
   </div>
 );

@@ -3,7 +3,7 @@ import { ExerciseBox, LessonHeader, MathBox } from '../components/UI';
 
 export default function Review() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 page-break" id="review">
+    <div className="max-w-4xl mx-auto px-4 py-8" id="review">
       <LessonHeader 
         number={4} 
         title="مراجعة الوحدة الأولى" 

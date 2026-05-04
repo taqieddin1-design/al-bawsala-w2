@@ -5,7 +5,7 @@ import { ConceptBox } from '../components/UI';
 
 export default function Unit4_Intro() {
   return (
-    <div className="flex flex-col justify-center items-center py-12 page-break mt-20" id="u4-intro">
+    <div className="flex flex-col justify-center items-center py-12 mt-20" id="u4-intro">
       <motion.div 
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}

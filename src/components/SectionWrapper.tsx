@@ -56,7 +56,7 @@ export default function SectionWrapper({ id, title, children }: SectionWrapperPr
   };
 
   return (
-    <div className="relative mb-8" id={`section-${id}`}>
+    <div className="relative mb-8 page-break" id={`section-${id}`}>
       {children}
       
       {!loading && (

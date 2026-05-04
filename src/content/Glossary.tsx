@@ -24,7 +24,7 @@ export default function Glossary() {
   );
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 page-break pb-20" id="glossary">
+    <div className="max-w-4xl mx-auto px-4 py-8 pb-20" id="glossary">
       <LessonHeader 
         number={0} 
         title="مسرد المصطلحات" 

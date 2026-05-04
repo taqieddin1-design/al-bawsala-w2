@@ -108,7 +108,7 @@ export default function Lesson3() {
         }
       />
 
-      <div className="my-8 page-break">
+      <div className="my-8">
         <ConceptBox title="الإثراء والتوسع: الضباب الدخاني (Smog)">
           <p>كلمة (Smog) تأتي من دمج كلمتي Smoke دخان و Fog ضباب. وهو تلوث هواء خطير في المدن.</p>
           <ul className="list-disc list-inside mt-3 space-y-2">

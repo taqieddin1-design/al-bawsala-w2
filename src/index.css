@@ -70,10 +70,16 @@ html.dark .bg-white {
     display: block !important;
   }
   .page-break {
-    break-before: page;
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+  .page-break-after {
+    page-break-after: always !important;
+    break-after: page !important;
   }
   .prevent-break {
-    break-inside: avoid;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
   
   /* Reset overflow for print */

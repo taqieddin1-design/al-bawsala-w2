@@ -4,7 +4,7 @@ import { Building } from 'lucide-react';
 
 export default function Unit2_Review() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 page-break" id="u2-review">
+    <div className="max-w-4xl mx-auto px-4 py-8" id="u2-review">
       <LessonHeader 
         number={4} 
         title="الإثراء ومراجعة الوحدة الثانية" 
