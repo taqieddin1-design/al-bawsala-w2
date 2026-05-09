@@ -1,6 +1,6 @@
 import React from 'react';
 import { StoryBox, ConceptBox, ExerciseBox, LessonHeader } from '../components/UI';
-import { Pickaxe, ShieldAlert, RefreshCcw, HandHandshake } from 'lucide-react';
+import { Pickaxe, ShieldAlert, RefreshCcw, Handshake } from 'lucide-react';
 
 export default function Unit4_Lesson3() {
   return (
@@ -8,7 +8,12 @@ export default function Unit4_Lesson3() {
       <LessonHeader 
         number={3} 
         title="تعدين الخامات المعدنية وأثره على البيئة" 
-        objective="معرفة طرق استخراج المعادن من الأرض (التعدين) وأثره المدمر والسلبي على البيئة وكيفية إدارة وتخفيف هذه المخاطر."
+        mainIdea="للتعدين أهمية كبيرة في دعم الاقتصاد وتوفير المواد الخام الضرورية للحياة على سطح الأرض، إلا أن له تأثيرات سلبية على البيئة، ويتم بذل جهود حثيثة لإدارة هذه التأثيرات من خلال تطبيق استراتيجيات فعالة مثل إعادة استخدام المناجم."
+        outcomes={[
+          "أوضّح أهمية طرائق الاستكشاف الجيولوجي في استكشاف باطن الأرض.",
+          "أصِف كيفية استخراج بعض الخامات المعدنية من الصخور.",
+          "أصِف الآثار البيئية الناجمة عن تعدين الخامات المعدنية."
+        ]}
       />
 
       <StoryBox>

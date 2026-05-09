@@ -52,12 +52,14 @@ export const ExerciseBox = ({
   type = 'question', 
   title, 
   question, 
-  answer 
+  answer,
+  hasMath = false
 }: { 
   type?: 'question' | 'experiment' | 'check' | 'activity' | 'review', 
   title?: string, 
   question: React.ReactNode, 
-  answer: React.ReactNode 
+  answer: React.ReactNode,
+  hasMath?: boolean
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -99,7 +101,13 @@ export const ExerciseBox = ({
           <span className="text-xl">{isOpen ? '▼' : '◄'}</span>
         </button>
         
-        <div className={`${isOpen ? 'block' : 'hidden'} print:block px-6 py-5 bg-emerald-50/30`}>
+        {hasMath && (
+           <div className="hidden print:block w-full h-64 bg-white border-t border-dashed border-gray-200 p-4">
+              <p className="text-gray-400 text-sm italic">مساحة مخصصة للحل...</p>
+           </div>
+        )}
+
+        <div className={`${isOpen ? 'block' : 'hidden'} ${hasMath ? 'print:hidden' : 'print:block'} px-6 py-5 bg-emerald-50/30`}>
           <div className="flex gap-3 items-start">
             <div className="text-emerald-600 font-bold mt-1">✓ الحل:</div>
             <div className="text-gray-800 flex-grow leading-relaxed font-medium">
@@ -112,20 +120,47 @@ export const ExerciseBox = ({
   );
 };
 
-export const LessonHeader = ({ number, title, objective }: { number: number, title: string, objective: string }) => (
+export const LessonHeader = ({ number, title, objective, outcomes, mainIdea }: { number: number, title: string, objective?: string, outcomes?: string[], mainIdea?: string }) => (
   <div className="mb-10 text-center relative prevent-break mt-16 pt-8 border-t-2 border-dashed border-gray-200">
     <div className="inline-block bg-sky-600 text-white font-bold px-6 py-2 rounded-full mb-4 shadow-md">
       الدرس {number}
     </div>
     <h1 className="text-4xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">{title}</h1>
-    <p className="max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed font-medium bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-      🎯 <span className="font-bold">الهدف:</span> {objective}
-    </p>
+    {objective && (
+      <p className="max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed font-medium bg-white p-4 rounded-xl border border-gray-100 shadow-sm mb-6">
+        🎯 <span className="font-bold">الهدف:</span> {objective}
+      </p>
+    )}
+    {mainIdea && (
+      <div className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed font-medium bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-right mb-6">
+         <div className="flex items-center gap-2 mb-4">
+          <span className="text-2xl">💡</span>
+          <h3 className="font-bold text-xl bg-amber-200 text-gray-900 px-3 py-1 rounded-md">الفكرة الرئيسة</h3>
+        </div>
+        <p className="leading-relaxed">{mainIdea}</p>
+      </div>
+    )}
+    {outcomes && (
+      <div className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed font-medium bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-right">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-2xl">🎯</span>
+          <h3 className="font-bold text-xl bg-yellow-200 text-gray-900 px-3 py-1 rounded-md">نتاجات التعلّم</h3>
+        </div>
+        <ul className="list-none space-y-3">
+          {outcomes.map((outcome, idx) => (
+            <li key={idx} className="flex gap-2 items-start">
+              <span className="text-emerald-500 font-bold mt-1">-</span>
+              <span>{outcome}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
   </div>
 );
 
 export const MathBox = ({ children }: { children: React.ReactNode }) => (
-  <div className="bg-gray-800 text-emerald-400 p-4 rounded-xl font-mono text-left my-4 text-lg overflow-x-auto shadow-inner prevent-break" dir="ltr">
+  <div className="bg-white dark:bg-gray-800 text-emerald-800 dark:text-emerald-400 border border-gray-200 dark:border-gray-700 p-4 rounded-xl font-mono text-left my-4 text-lg overflow-x-auto shadow-sm prevent-break print:bg-white print:text-black print:border-gray-400" dir="ltr">
     {children}
   </div>
 );

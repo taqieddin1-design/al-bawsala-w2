@@ -47,6 +47,12 @@ export default function Auth({ onSuccess }: AuthProps) {
         setError('بيانات الدخول غير صحيحة، تأكد من البريد الإلكتروني وكلمة المرور أو قم بإنشاء حساب جديد.');
       } else if (err.code === 'auth/weak-password') {
         setError('كلمة المرور ضعيفة. يجب أن تتكون من 6 أحرف على الأقل.');
+      } else if (err.code === 'auth/network-request-failed') {
+        if (window.self !== window.top) {
+           setError('يرجى فتح التطبيق في نافذة جديدة (من خلال زر الفتح بأعلى الشاشة) حتى تتمكن من تسجيل الدخول، حيث قد تمنع بيئة المعاينة بعض الاتصالات.');
+        } else {
+           setError('فشل الاتصال بالشبكة. يرجى التأكد من اتصالك بالإنترنت، وتعطيل إضافات حجب الإعلانات (AdBlockers) ثم المحاولة مجدداً.');
+        }
       } else {
         setError(err.message || 'حدث خطأ غير متوقع.');
       }
@@ -140,8 +146,18 @@ export default function Auth({ onSuccess }: AuthProps) {
             </div>
 
             {error && (
-              <div className="text-rose-600 text-sm font-medium bg-rose-50 p-3 rounded text-center border border-rose-100">
-                {error}
+              <div className="text-rose-600 text-sm font-medium bg-rose-50 p-3 rounded text-center border border-rose-100 flex flex-col items-center gap-2">
+                <p>{error}</p>
+                {window.self !== window.top && error.includes('نافذة جديدة') && (
+                  <a 
+                    href={window.location.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2 bg-rose-600 text-white rounded-md hover:bg-rose-700 transition-colors"
+                  >
+                    فتح التطبيق في نافذة جديدة
+                  </a>
+                )}
               </div>
             )}
 

@@ -7,36 +7,19 @@ export default function Unit2_Lesson1() {
     <div className="max-w-4xl mx-auto px-4 py-8" id="u2-lesson1">
       <LessonHeader 
         number={1} 
-        title="تشوق الصخور (Deformation of Rocks)" 
-        objective="توضيح المقصود بتشوه الصخور، وتمييز أنواع الإجهادات وتأثير العوامل المختلفة في استجابة الصخور."
+        title="تشوّه الصخور (Deformation of Rocks)" 
+        mainIdea="تتعرّض صخور القشرة الأرضية إلى قوى قد تغيّر من شكلها أو حجمها أو كليهما معًا، ويعتمد هذا التغيّر على عوامل عدّة، منها: نوع الإجهاد."
+        outcomes={[
+          "أوضّح المقصود بتشوّه الصخور، والتراكيب الجيولوجيّة.",
+          "أصف العلاقة بين الإجهاد والمطاوعة لمادّة هشّة وأخرى لَدِنة.",
+          "أميّز بين أنواع الإجهادات الثلاثة.",
+          "أربط بين نوع التركيب الجيولوجي ونوع الإجهاد الذي أثّر فيه."
+        ]}
       />
 
       <StoryBox>
         تخيل أنك تمسك بقطعة من المعجون وتضغط عليها، ماذا يحدث؟ سيتغير شكلها لتتكيف مع الضغط. هذا بالضبط ما يحدث للصخور في الطبيعة! فرغم صلابتها وقوتها، إلا أنها عندما تتعرض لقوى هائلة في باطن الأرض، فإنها إما أن تنكسر أو تنحني وتطوى. هذا التغير في شكلها أو حجمها هو ما نسميه <strong>التشوه (Deformation)</strong> والذي ينتج لنا أشكالاً مذهلة تسمى <strong>التراكيب الجيولوجية</strong>.
       </StoryBox>
-
-      <ExerciseBox 
-        type="experiment"
-        title="التجربة الاستهلالية: كيف تؤثر القوى في الصخور؟ (ص 47)"
-        question={
-          <div className="space-y-2">
-            <p>عند ثني عصا خشبية ببطء، ثم ثنيها بقوة وسرعة.. ومقارنة ذلك بثني قطعة من المعجون (الصلصال):</p>
-            <ol className="list-decimal list-inside space-y-1">
-              <li>قارن بين التغير الذي حصل على العصا الخشبية في الحالتين.</li>
-              <li>استنتج نوع القوة التي أثرت بها في العصا والمعجون.</li>
-              <li>فسر سبب اختلاف سلوك العصا عن المعجون.</li>
-            </ol>
-          </div>
-        }
-        answer={
-          <div className="space-y-3">
-            <p><strong>1. المقارنة:</strong> عند الثني ببطء قد تنحني العصا قليلاً مرونة قبل الكسر، وعند الثني بقوة وسرعة تنكسر فوراً لعدم إعطاءها طاقة لتحمل الإجهاد.</p>
-            <p><strong>2. نوع القوة:</strong> قوة ضغط أدت لتقوس الأطراف وانحنائها أو كسرها (إجهاد).</p>
-            <p><strong>3. التفسير:</strong> العصا الخشبية مادة <strong>هشة (Brittle)</strong> تنكسر عند تجاوز قوة احتمالاتها لغياب اللدونة، بينما المعجون مادة <strong>لدنة (Ductile)</strong> تتشكل وتطوى دون أن تنكسر.</p>
-            <p className="font-bold text-emerald-700 mt-2">هكذا تسلك صخور القشرة الأرضية في الطبيعة، بعضها يتكسر كالخشب (صخور هشة) وبعضها يطوى كالمعجون (صخور لدنة)!</p>
-          </div>
-        }
-      />
 
       <ConceptBox title="الإجهاد (Stress) والمطاوعة (Strain)" icon={Hammer}>
         <div className="flex flex-col md:flex-row gap-6 items-center">
@@ -61,11 +44,6 @@ export default function Unit2_Lesson1() {
             </div>
         </div>
 
-        <div className="w-full bg-sky-50 border-2 border-dashed border-sky-300 rounded-lg flex flex-col items-center justify-center text-sky-700 my-6 text-center p-6">
-          <span className="font-bold text-lg mb-2">الشكل (2): الإجهاد والمطاوعة في الصخور الهشة واللدنة</span>
-          <span className="text-sm opacity-75">(يرجى إرفاق الرسم البياني للإجهاد والمطاوعة للصخور الهشة واللدنة)</span>
-        </div>
-
       </ConceptBox>
 
       <ConceptBox title="العوامل المحددة لتشوه الصخور" icon={Layers}>
@@ -73,11 +51,6 @@ export default function Unit2_Lesson1() {
           <div className="bg-amber-50 p-5 rounded-xl border border-amber-200">
             <h4 className="font-bold text-lg text-amber-800 mb-2">1. نوع الصخور:</h4>
             <p>تختلف الصخور بمطاوعتها؛ فالصخور <strong>الهشة</strong> (كالبازلت والصوان) تنكسر عند تجاوز حد المرونة مكونة التركيب المسمى "صدوع". أما الصخور <strong>اللدنة</strong> (كالصخور الطينية والغضار) فتنثني وتكوّن "طيات".</p>
-            
-            <div className="w-full bg-amber-100 border-2 border-dashed border-amber-300 rounded-lg flex flex-col items-center justify-center text-amber-800 mt-4 text-center p-4">
-              <span className="font-bold text-md mb-1">الشكل (3): صخور رسوبية يظهر فيها التشوه الهش</span>
-              <span className="text-xs opacity-75">(يرجى إرفاق صورة الصخور الرسوبية المكسرة)</span>
-            </div>
           </div>
 
           <div className="bg-indigo-50 p-5 rounded-xl border border-indigo-200">
@@ -87,11 +60,6 @@ export default function Unit2_Lesson1() {
               <li><strong>الشد:</strong> قوتان متعاكستان متباعدتان (تؤديان لاستطالة).</li>
               <li><strong>القص:</strong> قوتان متعاكستان تنزلقان بصورة متوازية (تؤديان للتمزق).</li>
             </ul>
-
-            <div className="w-full bg-indigo-100 border-2 border-dashed border-indigo-300 rounded-lg flex flex-col items-center justify-center text-indigo-800 mt-4 text-center p-4">
-              <span className="font-bold text-md mb-1">صورة: أنواع الإجهاد (القص، الشد، الضغط)</span>
-              <span className="text-xs opacity-75">(يرجى إرفاق رسم الإجهادات الثلاثة)</span>
-            </div>
           </div>
 
           <div className="bg-rose-50 p-5 rounded-xl border border-rose-200">
@@ -106,6 +74,82 @@ export default function Unit2_Lesson1() {
               <Clock size={20} /> 4. الزمن:
             </h4>
             <p>الضغط المستمر لمدد زمنية طويلة جداً يعدل سلوك الصخر الهش ليجعله يتصرف كالمواد اللدنة ويتطوى ببطء شديد دون الانكسار، حتى لو كان الإجهاد المطبق دون حد المرونة!</p>
+          </div>
+        </div>
+      </ConceptBox>
+
+      <ConceptBox title="أنواع الإجهاد (Types of Stress)" icon={Hammer}>
+        <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto text-center mb-10">
+          تختلف التراكيب الجيولوجية الناتجة عن مطاوعة الصخور الهشّة والصخور اللّدنِة باختلاف نوع الإجهاد المؤثّر فيها،
+          إذ إن للإجهاد ثلاثة أنواع؛ اعتمادًا على اتّجاه القوّة المؤثّرة على الصّخر، وهي: الضّغط، والشّد، والقصّ.
+          أنظر المخطط المفاهيمي الذي يبيّن أنواعًا مختلفة من الإجهاد.
+        </p>
+
+        <div className="flex flex-col items-center animate-in fade-in zoom-in duration-500 w-full overflow-x-auto pb-4">
+          <div className="min-w-[600px] md:min-w-0 w-full max-w-4xl px-2">
+            {/* Main Title Node */}
+            <div className="flex justify-center relative z-20">
+              <div className="bg-[#2a68b5] text-white font-bold py-3 px-12 rounded-full border-[3px] border-[#c0d1e5] shadow-lg text-xl inline-block">
+                أنواع الإجهاد
+              </div>
+            </div>
+
+            {/* Tree Connections */}
+            <div className="w-[75%] mx-auto flex justify-between relative -mt-3 z-10">
+              <div className="border-t-[1.5px] border-l-[1.5px] border-dotted border-gray-500 h-8 w-1/2 rounded-tl-xl translate-y-3 translate-x-[1px]"></div>
+              <div className="border-t-[1.5px] border-r-[1.5px] border-dotted border-gray-500 h-8 w-1/2 rounded-tr-xl translate-y-3 -translate-x-[1px]"></div>
+              <div className="absolute left-1/2 top-0 h-11 border-l-[1.5px] border-dotted border-gray-500 -translate-x-1/2"></div>
+            </div>
+
+            {/* First Level nodes (The blue boxes) */}
+            <div className="flex gap-4 md:gap-8 mt-2 relative z-20">
+              {/* القص */}
+              <div className="flex-1 flex justify-center">
+                <div className="bg-sky-100 text-black font-bold py-2 w-full max-w-[200px] text-center shadow">القصّ</div>
+              </div>
+              {/* الشد */}
+              <div className="flex-1 flex justify-center">
+                <div className="bg-sky-100 text-black font-bold py-2 w-full max-w-[200px] text-center shadow">الشّد</div>
+              </div>
+              {/* الضغط */}
+              <div className="flex-1 flex justify-center">
+                <div className="bg-sky-100 text-black font-bold py-2 w-full max-w-[200px] text-center shadow">الضّغط</div>
+              </div>
+            </div>
+
+            {/* More vertical Tree Connections */}
+            <div className="flex gap-4 md:gap-8 relative z-10">
+              <div className="flex-1 flex justify-center">
+                <div className="h-6 border-l-[1.5px] border-dotted border-gray-500"></div>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <div className="h-6 border-l-[1.5px] border-dotted border-gray-500"></div>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <div className="h-6 border-l-[1.5px] border-dotted border-gray-500"></div>
+              </div>
+            </div>
+
+            {/* Second Level nodes (The grey definition boxes) */}
+            <div className="flex gap-4 md:gap-8 relative z-20">
+              <div className="flex-1 flex justify-center">
+                <div className="bg-yellow-50 text-black p-4 text-base md:text-lg font-semibold leading-relaxed text-center border-2 border-orange-400 rounded-lg w-full max-w-[250px] shadow-md min-h-[120px] flex items-center justify-center">
+                  القصّ: قوّتان متعاكستان تتحرّكان بصورة متوازية في الجسم الصّخريّ تؤثّران في مستويين مختلفين.
+                </div>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <div className="bg-yellow-50 text-black p-4 text-base md:text-lg font-semibold leading-relaxed text-center border-2 border-orange-400 rounded-lg w-full max-w-[250px] shadow-md min-h-[120px] flex items-center justify-center">
+                  الشّد: قوّتان متعاكستان متباعدتان عن الجسم الصّخريّ تؤثّران في مستوى واحد.
+                </div>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <div className="bg-yellow-50 text-black p-4 text-base md:text-lg font-semibold leading-relaxed text-center border-2 border-orange-400 rounded-lg w-full max-w-[250px] shadow-md min-h-[120px] flex items-center justify-center">
+                  الضّغط: قوّتان متعاكستان باتّجاه الجسم الصّخريّ تؤثّران في مستوى واحد.
+                </div>
+              </div>
+            </div>
+
+            
           </div>
         </div>
       </ConceptBox>

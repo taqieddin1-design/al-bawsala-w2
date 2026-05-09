@@ -29,6 +29,7 @@ import Unit4_Lesson3 from './content/Unit4_Lesson3';
 import Unit4_Review from './content/Unit4_Review';
 
 import Glossary from './content/Glossary';
+import MathSolutions from './content/MathSolutions';
 
 import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap, Facebook, Instagram, FileDown, X, ExternalLink, Info } from 'lucide-react';
 import Comments from './components/Comments';
@@ -39,6 +40,7 @@ export default function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState<'dashboard' | 'dossier'>('dashboard');
+  const [showPrintModal, setShowPrintModal] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') === 'dark';
@@ -84,7 +86,7 @@ export default function App() {
   }, [darkMode]);
 
   const handleDownload = () => {
-    window.print();
+    setShowPrintModal(true);
   };
 
   const handleLogout = () => {
@@ -128,6 +130,7 @@ export default function App() {
     { id: 'u4-lesson3', component: <Unit4_Lesson3 />, title: 'تلوث المياه الجوفية' },
     { id: 'u4-review', component: <Unit4_Review />, title: 'مراجعة الوحدة الرابعة' },
     
+    { id: 'math-solutions', component: <MathSolutions />, title: 'إجابات المسائل الحسابية' },
     { id: 'glossary', component: <Glossary />, title: 'المصطلحات' }
   ];
 
@@ -267,7 +270,102 @@ export default function App() {
         </div>
       </footer>
 
+      {/* Print/Download Modal */}
+      {showPrintModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm no-print" dir="rtl">
+          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl max-w-lg w-full max-h-[95vh] overflow-y-auto border border-gray-100 dark:border-gray-700 transform transition-all">
+            <div className="p-6 sm:p-8">
+              <div className="flex justify-between items-start mb-6">
+                <div className="bg-sky-100 dark:bg-sky-900/50 p-3 rounded-2xl text-sky-600 dark:text-sky-400">
+                  <FileDown size={32} />
+                </div>
+                <button 
+                  onClick={() => setShowPrintModal(false)}
+                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-full transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                تنزيل الدوسية PDF
+              </h3>
+              
+              <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50 rounded-2xl p-4 mb-6">
+                <div className="flex gap-3 text-amber-800 dark:text-amber-300 items-start">
+                  <Info className="shrink-0 mt-0.5" size={20} />
+                  <p className="text-sm leading-relaxed">
+                    للحفاظ على جودة التنسيقات العربية، والصور والمعادلات المعقدة، <strong>افتح التطبيق في نافذة جديدة واستخدم أداة الطباعة في المتصفح للحفظ كـ PDF</strong>.
+                  </p>
+                </div>
+              </div>
 
+              <div className="space-y-4 text-gray-600 dark:text-gray-300 mb-8">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">1</div>
+                  <p className="mt-1">
+                    {window.self !== window.top ? (
+                      <span>يرجى أولاً فتح التطبيق في <strong>نافذة جديدة</strong> من الزر في الأسفل. نافذة المعاينة هنا قد تمنع الطباعة الصحيحة.</span>
+                    ) : (
+                      <span className="line-through text-gray-400">قم بفتح التطبيق في نافذة جديدة (أنت الآن تستخدم نافذة جديدة ✅).</span>
+                    )}
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">2</div>
+                  <p className="mt-1">اضغط على زر الطباعة في الأسفل، أو استخدم الاختصار <strong>Ctrl + P</strong>.</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">3</div>
+                  <p className="mt-1">من قائمة الطابعات اختر: <strong>"حفظ بتنسيق PDF" (Save as PDF)</strong>.</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">4</div>
+                  <p className="mt-1">في خيارات الطباعة (More settings)، قم بتفعيل خيار <strong>"رسومات الخلفية" (Background graphics)</strong> للحصول على ألوان كاملة.</p>
+                </div>
+              </div>
+
+              <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800/50 rounded-2xl p-4 mb-8">
+                <div className="flex gap-3 text-emerald-800 dark:text-emerald-300 items-start">
+                  <Info className="shrink-0 mt-0.5" size={20} />
+                  <div className="text-sm leading-relaxed">
+                    <p className="font-bold mb-1">تلميح: لفتح الدوسية في مستندات جوجل (Google Docs)</p>
+                    <ul className="list-disc list-inside space-y-1 pr-1">
+                      <li>قم بحفظ الملف كـ PDF باستخدام أداة الطباعة.</li>
+                      <li>ارفع ملف الـ PDF إلى جوجل درايف (Google Drive).</li>
+                      <li>اضغط بزر الفأرة الأيمن على الملف في درايف، ثم اختر: <br/> <strong>فتح باستخدام (Open with) ← مستندات جوجل (Google Docs)</strong>.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                {window.self !== window.top && (
+                  <a 
+                    href={window.location.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-bold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                  >
+                    فتح في نافذة جديدة
+                    <ExternalLink size={18} />
+                  </a>
+                )}
+                <button 
+                  onClick={() => {
+                    setShowPrintModal(false);
+                    setTimeout(() => window.print(), 100);
+                  }}
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-sky-600 text-white rounded-xl font-bold hover:bg-sky-700 transition-colors"
+                >
+                  الاستمرار للطباعة (حفظ كـ PDF)
+                  <Printer size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

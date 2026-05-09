@@ -7,6 +7,7 @@ interface SectionWrapperProps {
   id: string;
   title: string;
   children: React.ReactNode;
+  key?: React.Key;
 }
 
 export function useProgress() {

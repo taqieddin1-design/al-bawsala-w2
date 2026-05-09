@@ -8,7 +8,15 @@ export default function Lesson1() {
       <LessonHeader 
         number={1} 
         title="الوقود الأحفوري وغازات الدفيئة" 
-        objective="معرفة الغازات الناتجة عن احتراق الوقود الأحفوري وحساب كمياتها للحد من آثارها السلبية في البيئة."
+        mainIdea="ينتج كثير من غازات الدفيئة من القطاعات المختلفة، وخاصة تلك التي تعمل على احتراق الوقود الأحفوري ما يؤدي إلى تراكمها في البيئة، ما يستدعي حساب كمياتها؛ للحد من آثارها السلبية في البيئة."
+        outcomes={[
+          "أستنتج الفروق في انبعاثات غازات الدفيئة من قطاعات الطاقة والنقل والمياه والزراعة والصحة، وأبررها.",
+          "أعدد الغازات الناتجة من عملية احتراق الوقود الأحفوري.",
+          "أشرح كيفية تشكّل الغازات الناتجة من عملية احتراق الوقود الأحفوري مع معادلاتها الكيميائية.",
+          "أوضح بأرقام معتمدة عالميًا كمية الوقود الأحفوري الذي يُستخدَم في المواصلات والصناعة.",
+          "أحسب كميات غازات الدفيئة المنبعثة من القطاعات المختلفة.",
+          "أرسم بيانيًا تزايد كميات الوقود الأحفوري المستهلك في السنوات العشر الماضية."
+        ]}
       />
 
       <StoryBox>
@@ -36,40 +44,7 @@ export default function Lesson1() {
           <div className="bg-amber-100 p-3 rounded-lg flex-grow text-center"><span className="text-2xl font-bold block text-amber-700">5.2%</span> الصناعة</div>
           <div className="bg-rose-100 p-3 rounded-lg flex-grow text-center"><span className="text-2xl font-bold block text-rose-700">3.2%</span> النفايات</div>
         </div>
-
-        <div className="w-full bg-emerald-50 border-2 border-dashed border-emerald-300 rounded-lg flex flex-col items-center justify-center text-emerald-700 my-6 text-center p-6">
-          <span className="font-bold text-lg mb-2">موضع صورة: رسم بياني يوضح العلاقة بين تغير متوسط درجة الحرارة وتركيز غاز ثاني أكسيد الكربون (1880 - 2020)</span>
-          <span className="text-sm opacity-75">(يرجى إرفاق الرسم البياني للأعمدة والخطوط)</span>
-        </div>
       </ConceptBox>
-
-      <ExerciseBox 
-        type="experiment"
-        title="التجربة الاستهلالية: نمذجة الاحتباس الحراري"
-        question={
-          <div className="space-y-4">
-            <p><strong>المطلوب:</strong> </p>
-            <ol className="list-decimal list-inside space-y-2">
-              <li>اكتب معادلة تفاعل حمض الهيدروكلوريك المخفف مع بيكربونات الصوديوم.</li>
-              <li>فسر سبب اختلاف درجة الحرارة في كلا الحوضين (A, B) بعد سكب الحمض.</li>
-              <li>صف العلاقة بين غاز ثاني أكسيد الكربون والاحتباس الحراري في الغلاف الجوي.</li>
-            </ol>
-          </div>
-        }
-        answer={
-          <div className="space-y-4">
-            <p>1. المعادلة الكيميائية:</p>
-            <MathBox>NaHCO3 + HCl → NaCl + H2O + CO2</MathBox>
-            <p>2. <strong>التفسير:</strong> الحوض (B) يحتوي على غاز CO2 الناتج من التفاعل، والذي يقوم بحبس الحرارة الناتجة من مصدر الطاقة الضوئي داخله، مما أدى إلى ارتفاع درجة حرارته مقارنة بالحوض (A) الممتلئ بالهواء العادي.</p>
-            <p>3. <strong>العلاقة:</strong> علاقة طردية! حيث يعمل غاز CO2 عمل الزجاج، إذ يمتص الأشعة تحت الحمراء المنبعثة من الحرارة ليحبسها ويمنعها من التسرب، مما يؤدي إلى زيادة حرارة الغلاف الجوي (ظاهرة الاحتباس الحراري).</p>
-            
-            <div className="w-full bg-sky-50 border-2 border-dashed border-sky-300 rounded-lg flex flex-col items-center justify-center text-sky-700 my-4 text-center p-6">
-              <span className="font-bold text-lg mb-2">موضع صورة: ظاهرة الاحتباس الحراري وانحباس الحرارة بالغلاف الجوي</span>
-              <span className="text-sm opacity-75">(يرجى إرفاق صورة توضيحية لأشعة الشمس والغلاف الجوي)</span>
-            </div>
-          </div>
-        }
-      />
 
       <ConceptBox title="الغازات الناتجة من احتراق الوقود الأحفوري" icon={Factory}>
         <p>الاحتراق هو ببساطة: <strong>وقود أحفوري + أكسجين ← ثاني أكسيد الكربون + بخار ماء + طاقة</strong>.</p>
@@ -99,6 +74,7 @@ export default function Lesson1() {
 
       <ExerciseBox 
         type="experiment"
+        hasMath={true}
         title="مثال 1 (ص 17)"
         question="إذا علمت أن معامل انبعاث غاز ثاني أكسيد الكربون (CO2) الناتج من احتراق الديزل يساوي 2.68 kg CO2/L، فما كمية غاز ثاني أكسيد الكربون بوحدة (kg) المنبعثة من احتراق 1000 L من الديزل؟"
         answer={
@@ -114,6 +90,7 @@ export default function Lesson1() {
 
       <ExerciseBox 
         type="experiment"
+        hasMath={true}
         title="مثال 2 (ص 17)"
         question="إذا علمت أن معامل انبعاث غاز الميثان (CH4) الناتج من روث الأبقار يساوي 100 kg من الميثان لكل بقرة سنوياً، فما كمية غاز الميثان المنبعثة من روث 50 بقرة؟"
         answer={
@@ -128,6 +105,7 @@ export default function Lesson1() {
       />
 
       <ExerciseBox 
+        hasMath={true}
         question="تمرين (ص 17): تحتوي مزرعة أغنام على 1200 رأس من الغنم. إذا علمت أن معامل انبعاث الميثان (CH4) من روث الغنم الواحد يساوي 15 kg سنوياً، فما كمية غاز الميثان المنبعثة في السنة؟"
         answer={
            <>
@@ -152,6 +130,7 @@ export default function Lesson1() {
 
       <ExerciseBox 
         type="experiment"
+        hasMath={true}
         title="مثال 3 (ص 19)"
         question="استهلكت إحدى الشركات 20000 L من الديزل لتشغيل مولدات الطوارئ الخاصة بها. إذا نتج من احتراق مادة الديزل: 50000 kg من ثاني أكسيد الكربون، و 480 g من غاز الميثان، و 150 g من أكسيد النيتروجين، وإذا علمت أن إمكانية إحداث الاحترار العالمي لكل من CO2 و CH4 و N2O هي على التوالي 1 و 27 و 273، فأجد مجموع انبعاثات مكافئ ثاني أكسيد الكربون بوحدة الكيلوغرام (kg)."
         answer={
@@ -185,6 +164,7 @@ export default function Lesson1() {
       />
 
       <ExerciseBox 
+        hasMath={true}
         question="تمرين (ص 19): يُطلق مصنع 50 طناً من أكسيد النيتروز (N2O) إلى الغلاف الجوي. إذا كانت إمكانية إحداث الاحترار العالمي له تساوي 265، فما كمية مكافئ ثاني أكسيد الكربون (CO2e) المنبعثة؟"
         answer={
            <>
@@ -232,10 +212,15 @@ export default function Lesson1() {
 
             <div>
               <h5 className="font-bold text-indigo-700">5. حساب مكافئ ثاني أكسيد الكربون لتبريد 75 kg من غاز CFC-11 (GWP=6230).</h5>
-              <MathBox>
-                CO2e = 6230 × 75<br/>
-                CO2e = 467,250 kg
-              </MathBox>
+              <div className="hidden print:block w-full h-48 bg-white border border-dashed border-gray-300 mt-2 p-2">
+                 <p className="text-gray-400 text-sm italic">مساحة مخصصة للحل... (تم نقل الإجابة لملحق المسائل)</p>
+              </div>
+              <div className="print:hidden">
+                <MathBox>
+                  CO2e = 6230 × 75<br/>
+                  CO2e = 467,250 kg
+                </MathBox>
+              </div>
             </div>
 
             <div>
