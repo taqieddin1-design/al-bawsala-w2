@@ -105,7 +105,7 @@ export default function Comments() {
   };
 
   if (loading) {
-    return <div className="p-8 text-center text-gray-500 w-full max-w-4xl mx-auto dark:text-gray-400">جاري تحميل التعليقات...</div>;
+    return <div className="p-8 text-center text-black w-full max-w-4xl mx-auto dark:text-gray-400">جاري تحميل التعليقات...</div>;
   }
 
   return (
@@ -134,7 +134,7 @@ export default function Comments() {
 
       <div className="space-y-4">
         {comments.length === 0 ? (
-          <p className="text-center text-gray-500 dark:text-gray-400 py-8">لا يوجد تعليقات حتى الآن. كن أول من يعلق!</p>
+          <p className="text-center text-black dark:text-gray-400 py-8">لا يوجد تعليقات حتى الآن. كن أول من يعلق!</p>
         ) : (
           comments.map((comment) => (
             <div key={comment.id} className="p-4 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-100 dark:border-gray-600 flex gap-4">
@@ -145,7 +145,7 @@ export default function Comments() {
               </div>
               <div className="flex-grow">
                 <div className="flex justify-between items-start mb-1">
-                  <span className="font-bold text-gray-900 dark:text-gray-100">{comment.userName}</span>
+                  <span className="font-bold text-black dark:text-gray-100">{comment.userName}</span>
                   {auth.currentUser?.uid === comment.userId && (
                     <button
                       onClick={() => handleDelete(comment.id, comment.userId)}
@@ -156,7 +156,7 @@ export default function Comments() {
                     </button>
                   )}
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed border-t border-gray-200 dark:border-gray-600 pt-2 mt-2">
+                <p className="text-black dark:text-gray-300 whitespace-pre-wrap leading-relaxed border-t border-gray-200 dark:border-gray-600 pt-2 mt-2">
                   {comment.text}
                 </p>
               </div>

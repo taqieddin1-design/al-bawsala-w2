@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { auth } from './lib/firebase';
 import { onAuthStateChanged, User, signOut } from 'firebase/auth';
 import Auth from './components/Auth';
 import Landing from './components/Landing';
 
-import Intro from './content/Intro';
-import Lesson1 from './content/Lesson1';
-import Lesson2 from './content/Lesson2';
-import Lesson3 from './content/Lesson3';
-import Review from './content/Review';
+const Intro = lazy(() => import('./content/Intro'));
+const Lesson1 = lazy(() => import('./content/Lesson1'));
+const Lesson2 = lazy(() => import('./content/Lesson2'));
+const Lesson3 = lazy(() => import('./content/Lesson3'));
+const Review = lazy(() => import('./content/Review'));
 
-import Unit2_Intro from './content/Unit2_Intro';
-import Unit2_Lesson1 from './content/Unit2_Lesson1';
-import Unit2_Lesson2 from './content/Unit2_Lesson2';
-import Unit2_Lesson3 from './content/Unit2_Lesson3';
-import Unit2_Review from './content/Unit2_Review';
+const Unit2_Intro = lazy(() => import('./content/Unit2_Intro'));
+const Unit2_Lesson1 = lazy(() => import('./content/Unit2_Lesson1'));
+const Unit2_Lesson2 = lazy(() => import('./content/Unit2_Lesson2'));
+const Unit2_Lesson3 = lazy(() => import('./content/Unit2_Lesson3'));
+const Unit2_Review = lazy(() => import('./content/Unit2_Review'));
 
-import Unit3_Intro from './content/Unit3_Intro';
-import Unit3_Lesson1 from './content/Unit3_Lesson1';
-import Unit3_Lesson2 from './content/Unit3_Lesson2';
-import Unit3_Lesson3 from './content/Unit3_Lesson3';
-import Unit3_Review from './content/Unit3_Review';
+const Unit3_Intro = lazy(() => import('./content/Unit3_Intro'));
+const Unit3_Lesson1 = lazy(() => import('./content/Unit3_Lesson1'));
+const Unit3_Lesson2 = lazy(() => import('./content/Unit3_Lesson2'));
+const Unit3_Lesson3 = lazy(() => import('./content/Unit3_Lesson3'));
+const Unit3_Review = lazy(() => import('./content/Unit3_Review'));
 
-import Unit4_Intro from './content/Unit4_Intro';
-import Unit4_Lesson1 from './content/Unit4_Lesson1';
-import Unit4_Lesson2 from './content/Unit4_Lesson2';
-import Unit4_Lesson3 from './content/Unit4_Lesson3';
-import Unit4_Review from './content/Unit4_Review';
+const Unit4_Intro = lazy(() => import('./content/Unit4_Intro'));
+const Unit4_Lesson1 = lazy(() => import('./content/Unit4_Lesson1'));
+const Unit4_Lesson2 = lazy(() => import('./content/Unit4_Lesson2'));
+const Unit4_Lesson3 = lazy(() => import('./content/Unit4_Lesson3'));
+const Unit4_Review = lazy(() => import('./content/Unit4_Review'));
 
-import Glossary from './content/Glossary';
-import MathSolutions from './content/MathSolutions';
+const Glossary = lazy(() => import('./content/Glossary'));
+const MathSolutions = lazy(() => import('./content/MathSolutions'));
 
 import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap, Facebook, Instagram, FileDown, X, ExternalLink, Info } from 'lucide-react';
 import Comments from './components/Comments';
@@ -135,7 +135,7 @@ export default function App() {
   ];
 
   return (
-    <div className="font-sans text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-gray-900 min-h-screen relative transition-colors duration-200" dir="rtl">
+    <div className="font-sans text-black dark:text-gray-100 bg-gray-50 dark:bg-gray-900 min-h-screen relative transition-colors duration-200" dir="rtl">
       
       {activeView === 'dossier' && (
         <ProgressIndicator totalSections={sections.length} />
@@ -181,7 +181,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 py-12 pt-20">
           <div className="mb-10 text-center sm:text-right">
             <h1 className="text-4xl font-extrabold text-emerald-700 dark:text-emerald-400 mb-2">مرحباً بك، {user.displayName || 'يا مبدع'}!</h1>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">اختر القسم الذي تود دراسته اليوم</p>
+            <p className="text-black dark:text-gray-400 text-lg">اختر القسم الذي تود دراسته اليوم</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -192,8 +192,8 @@ export default function App() {
               <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-2xl flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">
                 <Book size={32} />
               </div>
-              <h2 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white">دوسية البوصلة في علوم الأرض</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">دروس شاملة، أمثلة توضيحية، ومحتوى متكامل لضمان تفوقك في المادة.</p>
+              <h2 className="text-2xl font-bold mb-3 text-black dark:text-white">دوسية البوصلة في علوم الأرض</h2>
+              <p className="text-black dark:text-gray-400 mb-6 leading-relaxed">دروس شاملة، أمثلة توضيحية، ومحتوى متكامل لضمان تفوقك في المادة.</p>
               <div className="flex items-center text-emerald-600 dark:text-emerald-400 font-bold">
                 <span>تصفح الدوسية</span>
                 <ChevronRight className="mr-2" size={20} />
@@ -201,9 +201,9 @@ export default function App() {
             </div>
 
             <div className="bg-gray-100 dark:bg-gray-800/40 p-8 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-700 opacity-70 flex flex-col items-center justify-center text-center">
-              <GraduationCap size={48} className="text-gray-400 dark:text-gray-500 mb-4" />
-              <h2 className="text-xl font-bold mb-2 text-gray-600 dark:text-gray-400">الاختبارات الإلكترونية</h2>
-              <span className="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-bold mt-2">قريباً</span>
+              <GraduationCap size={48} className="text-black dark:text-gray-500 mb-4" />
+              <h2 className="text-xl font-bold mb-2 text-black dark:text-gray-400">الاختبارات الإلكترونية</h2>
+              <span className="bg-gray-200 dark:bg-gray-700 text-black dark:text-gray-300 px-3 py-1 rounded-full text-xs font-bold mt-2">قريباً</span>
             </div>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function App() {
           <div className="max-w-4xl mx-auto px-6 mb-8 no-print pb-4 border-b border-gray-200 dark:border-gray-800">
             <button 
               onClick={() => setActiveView('dashboard')}
-              className="flex items-center gap-2 text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 font-bold transition-colors bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-700 w-fit"
+              className="flex items-center gap-2 text-black hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400 font-bold transition-colors bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-sm border border-gray-200 dark:border-gray-700 w-fit"
             >
               <ChevronRight size={20} /> العودة للأقسام
             </button>
@@ -223,12 +223,18 @@ export default function App() {
           <div className="text-center no-print mb-12 space-y-4">
             <div className="inline-block bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300 px-4 py-1.5 rounded-full font-bold text-sm mb-2">الدراسة الذاتية</div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-emerald-700 dark:text-emerald-400">دوسية البوصلة</h1>
-            <p className="text-xl text-gray-500 dark:text-gray-400">في علوم الأرض والبيئة</p>
+            <p className="text-xl text-black dark:text-gray-400">في علوم الأرض والبيئة</p>
           </div>
 
           {sections.map((section) => (
             <SectionWrapper key={section.id} id={section.id} title={section.title}>
-              {section.component}
+              <Suspense fallback={
+                <div className="flex justify-center items-center p-12">
+                  <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-emerald-600"></div>
+                </div>
+              }>
+                {section.component}
+              </Suspense>
             </SectionWrapper>
           ))}
           
@@ -239,7 +245,7 @@ export default function App() {
       {/* Footer */}
       <footer className="z-10 relative mt-12 pb-8 border-t border-gray-200 dark:border-gray-800 pt-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md no-print">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
-          <p className="text-gray-700 dark:text-gray-300 font-bold text-center text-lg">
+          <p className="text-black dark:text-gray-300 font-bold text-center text-lg">
             يسعدني زيارتكم ومتابعتكم لحساباتي!
           </p>
           <div className="flex items-center gap-6">
@@ -264,7 +270,7 @@ export default function App() {
               <Facebook size={28} />
             </a>
           </div>
-          <p className="text-center text-gray-500 dark:text-gray-500 text-sm mt-4">
+          <p className="text-center text-black dark:text-gray-500 text-sm mt-4">
             جميع الحقوق محفوظة &copy; منصة البوصلة التعليمية
           </p>
         </div>
@@ -281,13 +287,13 @@ export default function App() {
                 </div>
                 <button 
                   onClick={() => setShowPrintModal(false)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-full transition-colors"
+                  className="text-black hover:text-black dark:hover:text-gray-200 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-full transition-colors"
                 >
                   <X size={24} />
                 </button>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
                 تنزيل الدوسية PDF
               </h3>
               
@@ -300,27 +306,27 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="space-y-4 text-gray-600 dark:text-gray-300 mb-8">
+              <div className="space-y-4 text-black dark:text-gray-300 mb-8">
                 <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">1</div>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-black dark:text-white">1</div>
                   <p className="mt-1">
                     {window.self !== window.top ? (
                       <span>يرجى أولاً فتح التطبيق في <strong>نافذة جديدة</strong> من الزر في الأسفل. نافذة المعاينة هنا قد تمنع الطباعة الصحيحة.</span>
                     ) : (
-                      <span className="line-through text-gray-400">قم بفتح التطبيق في نافذة جديدة (أنت الآن تستخدم نافذة جديدة ✅).</span>
+                      <span className="line-through text-black">قم بفتح التطبيق في نافذة جديدة (أنت الآن تستخدم نافذة جديدة ✅).</span>
                     )}
                   </p>
                 </div>
                 <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-black dark:text-white">2</div>
                   <p className="mt-1">اضغط على زر الطباعة في الأسفل، أو استخدم الاختصار <strong>Ctrl + P</strong>.</p>
                 </div>
                 <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-black dark:text-white">3</div>
                   <p className="mt-1">من قائمة الطابعات اختر: <strong>"حفظ بتنسيق PDF" (Save as PDF)</strong>.</p>
                 </div>
                 <div className="flex gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-gray-800 dark:text-white">4</div>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center font-bold text-black dark:text-white">4</div>
                   <p className="mt-1">في خيارات الطباعة (More settings)، قم بتفعيل خيار <strong>"رسومات الخلفية" (Background graphics)</strong> للحصول على ألوان كاملة.</p>
                 </div>
               </div>

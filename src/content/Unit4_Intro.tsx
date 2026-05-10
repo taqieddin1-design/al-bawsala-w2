@@ -19,7 +19,7 @@ export default function Unit4_Intro() {
           </div>
         </div>
         
-        <h2 className="text-5xl font-black text-gray-900 mb-6 tracking-tight">الوحدة الرابعة: الاستكشاف الجيولوجي</h2>
+        <h2 className="text-5xl font-black text-black mb-6 tracking-tight">الوحدة الرابعة: الاستكشاف الجيولوجي</h2>
         <h3 className="text-2xl text-amber-700 font-bold mb-10">Geological Exploration</h3>
         
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-2xl mx-auto mb-10 mt-10 relative">
@@ -27,7 +27,7 @@ export default function Unit4_Intro() {
           <h3 className="text-3xl font-bold text-amber-800 mb-4 text-center !leading-relaxed" style={{fontFamily: "'Cairo', sans-serif"}}>
             {`"فَأَمَّا الزَّبَدُ فَيَذْهَبُ جُفَاءً ۖ وَأَمَّا مَا يَنفَعُ النَّاسَ فَيَمْكُثُ فِي الْأَرْضِ"`}
           </h3>
-          <p className="text-gray-500 text-center font-medium">(سورة الرعد: الآية 17)</p>
+          <p className="text-black text-center font-medium">(سورة الرعد: الآية 17)</p>
         </div>
 
         <div className="text-right">

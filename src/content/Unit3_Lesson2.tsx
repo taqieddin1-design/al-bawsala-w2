@@ -31,7 +31,7 @@ export default function Unit3_Lesson2() {
       </ConceptBox>
 
       <ConceptBox title="فرضية توسع قاع المحيط" icon={Anchor}>
-        <p className="text-gray-600 mb-4 text-lg">في الستينيات، قدم العالم <strong>(هاري هس - Harry Hess)</strong> فرضيته الجريئة التي كانت بمثابة المفتاح السحري الذي كان ينقص فغنر!</p>
+        <p className="text-black mb-4 text-lg">في الستينيات، قدم العالم <strong>(هاري هس - Harry Hess)</strong> فرضيته الجريئة التي كانت بمثابة المفتاح السحري الذي كان ينقص فغنر!</p>
         
         <div className="bg-sky-50 border border-sky-200 rounded-xl p-6">
             <h4 className="font-bold text-sky-900 border-b border-sky-200 pb-3 mb-4 text-2xl">نص فرضية هس (Seafloor Spreading):</h4>
@@ -41,7 +41,7 @@ export default function Unit3_Lesson2() {
         </div>
 
         <h4 className="font-bold mt-8 mb-4 text-rose-800 text-2xl">الآلية الميكانيكية للتوسع:</h4>
-        <ol className="list-decimal list-inside space-y-3 text-gray-800 bg-white p-5 rounded-xl shadow-sm border border-gray-100 text-lg">
+        <ol className="list-decimal list-inside space-y-3 text-black bg-white p-5 rounded-xl shadow-sm border border-gray-100 text-lg">
             <li>تندفع الماغما (الصهارة) اللزجة من الستار إلى الأعلى عبر الصدع في وسط "ظهر المحيط".</li>
             <li>تبرد الماغما وتتصلب بمجرد ملامستها للماء مكونة <span className="font-bold text-emerald-600">قشرة محيطية جديدة</span>.</li>
             <li>استمرار تدفق الماغما يخلق ضغطاً يدفع القشرة التي تكونت قبلها للجانبين كالحزام الناقل!</li>
@@ -52,7 +52,7 @@ export default function Unit3_Lesson2() {
       <ConceptBox title="أدلة إثبات توسع قاع المحيط" icon={Magnet}>
         <div className="bg-amber-50 p-6 rounded-xl mb-4 border border-amber-200 border-r-8">
             <h4 className="text-2xl font-bold text-amber-900 mb-3">1. عُمُر صخور قاع المحيط (The Age of Rocks):</h4>
-            <p className="text-gray-800 text-lg mb-3">قامت سفينة غلومار تشالنجر بحفر عينات من قاع المحيط. وكانت النتيجة المذهلة:</p>
+            <p className="text-black text-lg mb-3">قامت سفينة غلومار تشالنجر بحفر عينات من قاع المحيط. وكانت النتيجة المذهلة:</p>
             <ul className="list-disc list-inside mt-2 text-amber-950 font-medium text-lg space-y-2">
                 <li>الصخور الواقعة في وســـــط "ظهر المحيط" مباشرة كانت هي <strong>الأحدث عمراً</strong> (مبردة حديثاً).</li>
                 <li>كلما ابتعدنا عن المركز ومشينا باتجاه حواف القارات والأخاديد، كلما <strong>زاد عمر أقدمية الصخور</strong> بشكل متماثل على الجانبين!</li>
@@ -61,7 +61,7 @@ export default function Unit3_Lesson2() {
         
         <div className="bg-emerald-50 p-6 rounded-xl mb-4 border border-emerald-200 border-r-8">
             <h4 className="text-2xl font-bold text-emerald-900 mb-3">2. الأشرطة المغناطيسية (Magnetic Strips):</h4>
-            <p className="text-gray-800 text-lg mb-3">يحتوي لب الأرض الخارجي السائل على حديد ونيكل متحرك يولد <strong>المجال المغناطيسي للأرض</strong>. اكتشف العلماء باستخدام أجهزة قياس المغناطيسية (Magnetometers) نمطاً مدهشاً في قاع المحيط:</p>
+            <p className="text-black text-lg mb-3">يحتوي لب الأرض الخارجي السائل على حديد ونيكل متحرك يولد <strong>المجال المغناطيسي للأرض</strong>. اكتشف العلماء باستخدام أجهزة قياس المغناطيسية (Magnetometers) نمطاً مدهشاً في قاع المحيط:</p>
             <ul className="list-disc list-inside mt-2 text-emerald-950 font-medium text-lg space-y-2">
                 <li>عندما تبرد الماغما في ظهر المحيط، تترتب ذرات المعادن المغناطيسية (مثل الماغنيتيت) لتطابق اتجاه المجال المغناطيسي للأرض في ذلك الوقت <strong>(المغناطيسية القديمة Paleomagnetism)</strong>.</li>
                 <li>ينعكس اتجاه المجال المغناطيسي للأرض كل فترة زمنية طويلة <strong>(الانقلاب المغناطيسي)</strong>. فنجد أشرطة صخرية ذات <strong>قطبية عادية</strong> (كاليوم) وأشرطة ذات <strong>قطبية مقلوبة</strong>.</li>
@@ -71,10 +71,10 @@ export default function Unit3_Lesson2() {
 
         <div className="bg-sky-50 p-6 rounded-xl mb-4 border border-sky-200 border-r-8">
             <h4 className="text-2xl font-bold text-sky-900 mb-3">3. مكونات صخور قاع المحيط:</h4>
-            <p className="text-gray-800 text-lg mb-3">استكشفت الغواصة (ألفين Alvin) قاع المحيط ووجدت أن جميع الصخور هي <strong>صخور نارية بازلتية</strong>. وتظهر على شكل وسائد تسمى <strong>(اللابة الوسائدية Pillow Lava)</strong> لأن الماغما تبرد وتتصلب بمجرد ملامستها لمياه المحيط الباردة مكونة هذا الشكل الدائري.</p>
+            <p className="text-black text-lg mb-3">استكشفت الغواصة (ألفين Alvin) قاع المحيط ووجدت أن جميع الصخور هي <strong>صخور نارية بازلتية</strong>. وتظهر على شكل وسائد تسمى <strong>(اللابة الوسائدية Pillow Lava)</strong> لأن الماغما تبرد وتتصلب بمجرد ملامستها لمياه المحيط الباردة مكونة هذا الشكل الدائري.</p>
         </div>
 
-        <p className="text-center font-bold text-gray-600 text-base italic mt-6">
+        <p className="text-center font-bold text-black text-base italic mt-6">
             * هذا التدرج التماثلي في عمر الصخور والأشرطة المغناطيسية أثبت رياضياً وجيولوجياً أن قاع المحيط يتم توليده من المنتصف وشطره إلى نصفين متباعدين!
         </p>
       </ConceptBox>

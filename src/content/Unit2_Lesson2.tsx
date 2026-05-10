@@ -31,21 +31,21 @@ export default function Unit2_Lesson2() {
                 <span className="bg-sky-100 text-sky-800 p-2 rounded shrink-0 h-fit">١</span>
                 <div>
                     <strong className="text-lg">مستوى الصدع (Fault Plane):</strong> 
-                    <p className="text-gray-600">هو السطح الفاصل الذي حدث عليه الانزلاق (الكسر نفسه). ويميل بزاوية تُعرف بـ (زاوية ميل الصدع) مع المستوى الأفقي.</p>
+                    <p className="text-black">هو السطح الفاصل الذي حدث عليه الانزلاق (الكسر نفسه). ويميل بزاوية تُعرف بـ (زاوية ميل الصدع) مع المستوى الأفقي.</p>
                 </div>
             </li>
             <li className="flex gap-3">
                 <span className="bg-rose-100 text-rose-800 p-2 rounded shrink-0 h-fit">٢</span>
                 <div>
                     <strong className="text-lg">الجدار المعلَّق (Hanging Wall):</strong> 
-                    <p className="text-gray-600">الكتلة الصخرية التي تقع <strong>فوق</strong> مستوى الصدع المائل.</p>
+                    <p className="text-black">الكتلة الصخرية التي تقع <strong>فوق</strong> مستوى الصدع المائل.</p>
                 </div>
             </li>
             <li className="flex gap-3">
                 <span className="bg-amber-100 text-amber-800 p-2 rounded shrink-0 h-fit">٣</span>
                 <div>
                     <strong className="text-lg">الجدار القَدَم (Foot Wall):</strong> 
-                    <p className="text-gray-600">الكتلة الصخرية الثابتة نسبياً التي تقع <strong>أسفل</strong> مستوى الصدع المائل.</p>
+                    <p className="text-black">الكتلة الصخرية الثابتة نسبياً التي تقع <strong>أسفل</strong> مستوى الصدع المائل.</p>
                 </div>
             </li>
             </ul>
@@ -62,28 +62,28 @@ export default function Unit2_Lesson2() {
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded border border-sky-100">
                     <strong className="text-lg text-sky-700 block mb-2">أ. الصدع العادي:</strong>
-                    <p className="text-gray-700 text-sm">ينزلق الجدار المعلق <strong>للأسفل</strong> بالنسبة للجدار القدم.</p>
-                    <p className="mt-2 text-sm font-bold text-gray-500">القوة المسببة: إجهاد الشد.</p>
+                    <p className="text-black text-sm">ينزلق الجدار المعلق <strong>للأسفل</strong> بالنسبة للجدار القدم.</p>
+                    <p className="mt-2 text-sm font-bold text-black">القوة المسببة: إجهاد الشد.</p>
                 </div>
                 <div className="bg-white p-4 rounded border border-sky-100">
                     <strong className="text-lg text-rose-700 block mb-2">ب. الصدع العكسي:</strong>
-                    <p className="text-gray-700 text-sm">يندفع الجدار المعلق <strong>للأعلى</strong> متسلقاً الجدار القدم.</p>
-                    <p className="mt-2 text-sm font-bold text-gray-500">القوة المسببة: إجهاد الضغط.</p>
+                    <p className="text-black text-sm">يندفع الجدار المعلق <strong>للأعلى</strong> متسلقاً الجدار القدم.</p>
+                    <p className="mt-2 text-sm font-bold text-black">القوة المسببة: إجهاد الضغط.</p>
                 </div>
             </div>
           </div>
 
           <div className="bg-emerald-50 border-r-4 border-emerald-500 p-5 rounded-l-lg shadow-sm">
             <h4 className="font-bold text-emerald-800 text-xl inline-block mb-2">صدوع الحركة النسبية الأفقية:</h4>
-            <p className="mt-1 text-gray-700">تُعرف بالصدوع <strong>الجانبية</strong>. تتحرك الكتل أفقياً بمحاذاة بعضها، مستوى الصدع يكون رأسياً تقريباً.</p>
-            <p className="mt-3 text-sm font-bold text-gray-600 bg-white inline-block px-3 py-1 rounded">القوة المسببة: إجهاد القص</p>
-            <p className="text-sm text-gray-500 mt-2">مثال: صدع البحر الميت التحويلي.</p>
+            <p className="mt-1 text-black">تُعرف بالصدوع <strong>الجانبية</strong>. تتحرك الكتل أفقياً بمحاذاة بعضها، مستوى الصدع يكون رأسياً تقريباً.</p>
+            <p className="mt-3 text-sm font-bold text-black bg-white inline-block px-3 py-1 rounded">القوة المسببة: إجهاد القص</p>
+            <p className="text-sm text-black mt-2">مثال: صدع البحر الميت التحويلي.</p>
           </div>
         </div>
       </ConceptBox>
 
       <ConceptBox title="أنظمة الصدوع المركبة">
-        <ul className="list-disc list-inside space-y-4 text-gray-800 text-lg mt-4">
+        <ul className="list-disc list-inside space-y-4 text-black text-lg mt-4">
           <li><strong>الصدوع الدرجية (Step Faults):</strong> تشبه الدرج. سلسلة من الصدوع العادية. تهبط كتلة تلو الأخرى. (مثل وادي الموجب).</li>
           <li><strong>الأحواض الخسفية (Grabens):</strong> صدعان عاديان، يتكفلان بإسقاط كتلة مركزية للأسفل. (مثل غور الأردن).</li>
           <li><strong>الكتل الاندفاعية (Horsts):</strong> صدعان عاديان يسببان هبوط الكتل الطرفية وبقاء الكتلة المركزية صامدة لتبدو مرتفعة كالهضبة.</li>
@@ -125,7 +125,7 @@ export default function Unit2_Lesson2() {
 
             <div className="bg-sky-50 p-4 rounded-xl border border-sky-100">
                 <h5 className="font-bold text-sky-800 border-b border-sky-200 pb-2 mb-3">4. إجابات الاختيار من متعدد (ص 63):</h5>
-                <ol className="list-decimal list-inside space-y-2 font-medium text-gray-700">
+                <ol className="list-decimal list-inside space-y-2 font-medium text-black">
                 <li><strong>ب. صدع عكسي.</strong> (السهام المتقاربة = إجهاد ضغط = صدع عكسي).</li>
                 <li><strong>أ. مستوى الصدع، والجدار القدم.</strong> (A=المستوى المائل، Y=القدم، X=المعلق).</li>
                 <li><strong>أ. صدع عادي.</strong> (إجهاد الشد يصنع صدعاً عادياً دوماً).</li>

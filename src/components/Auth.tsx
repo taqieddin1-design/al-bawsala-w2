@@ -64,10 +64,10 @@ export default function Auth({ onSuccess }: AuthProps) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8" dir="rtl">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-black">
           موقع البوصلة
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
+        <p className="mt-2 text-center text-sm text-black">
           {isLogin ? 'قم بتسجيل الدخول للاستمرار' : 'أنشئ حساباً جديداً للانضمام إلينا'}
         </p>
       </div>
@@ -78,7 +78,7 @@ export default function Auth({ onSuccess }: AuthProps) {
             
             {!isLogin && (
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="name" className="block text-sm font-medium text-black">
                   الاسم الكامل
                 </label>
                 <div className="mt-1">
@@ -96,7 +96,7 @@ export default function Auth({ onSuccess }: AuthProps) {
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-black">
                 البريد الإلكتروني
               </label>
               <div className="mt-1">
@@ -114,7 +114,7 @@ export default function Auth({ onSuccess }: AuthProps) {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-black">
                 كلمة المرور
               </label>
               <div className="mt-1">

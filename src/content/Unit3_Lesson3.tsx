@@ -26,12 +26,12 @@ export default function Unit3_Lesson3() {
           تنص النظرية على أن <strong>الغلاف الصخري (Lithosphere)</strong> للأرض مقسم إلى قطع كبرى وصغرى تسمى <strong>الصفائح (Plates)</strong>، وهذه الصفائح تتحرك حركة مستمرة وبطيئة فوق <strong>الغلاف اللدن (Asthenosphere)</strong> بفعل تيارات الحمل في الستار.
         </p>
 
-        <h4 className="font-bold text-gray-800 mt-6 mb-3 text-xl">أنواع الصفائح حسب المكونات:</h4>
+        <h4 className="font-bold text-black mt-6 mb-3 text-xl">أنواع الصفائح حسب المكونات:</h4>
         <ul className="list-disc list-inside space-y-3">
           <li><strong>صفيحة قارية (Continental Plate):</strong> صفيحة تحمل قارة (يابسة)، وغالباً تكون من صخور الجرانيت، وتمتاز بأن <strong>كثافتها منخفضة (2.7 g/cm³)</strong> وسمكها كبير.</li>
           <li><strong>صفيحة محيطية (Oceanic Plate):</strong> صفيحة تقع تحت قاع المحيط، وتتكون من صخور البازلت، وتمتاز بأن <strong>كثافتها عالية (3.0 g/cm³)</strong> وسمكها أقل.</li>
         </ul>
-        <p className="mt-3 text-gray-500 italic text-sm">* معظم الصفائح الكبرى هي صفائح مختلطة (قارية-محيطية) معاً كالصفيحة الإفريقية.</p>
+        <p className="mt-3 text-black italic text-sm">* معظم الصفائح الكبرى هي صفائح مختلطة (قارية-محيطية) معاً كالصفيحة الإفريقية.</p>
       </ConceptBox>
 
       <ConceptBox title="أنواع حدود الصفائح" icon={ArrowLeftRight}>
@@ -40,7 +40,7 @@ export default function Unit3_Lesson3() {
         <div className="space-y-6">
           <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
             <h4 className="font-bold text-sky-800 text-xl border-b pb-2 mb-3">1. الحدود التباعدية (Divergent Boundaries)</h4>
-            <p className="text-gray-700">تتحرك صفيحتان تبتعدان عن بعضهما. (حدود بنّاءة).</p>
+            <p className="text-black">تتحرك صفيحتان تبتعدان عن بعضهما. (حدود بنّاءة).</p>
             <ul className="list-disc list-inside mt-3 space-y-1 text-sky-900">
               <li><strong>في قاع المحيط:</strong> تكون "ظهر المحيط" وتوسع القاع.</li>
               <li><strong>على اليابسة:</strong> تكون "حفرة انهضام" (Rift Valley) وتنشق القارة مسببة بحراً ضيقاً (مثل البحر الأحمر الذي يفصل الصفيحة العربية عن الإفريقية). ومع الزمن يتحول لمحيط واسع.</li>
@@ -49,7 +49,7 @@ export default function Unit3_Lesson3() {
 
           <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
             <h4 className="font-bold text-rose-800 text-xl border-b pb-2 mb-3">2. الحدود التقاربية (Convergent Boundaries)</h4>
-            <p className="text-gray-700">تتحرك صفيحتان تقتربان من بعضهما وتتصادمان. (حدود هدّامة). ولها 3 حالات:</p>
+            <p className="text-black">تتحرك صفيحتان تقتربان من بعضهما وتتصادمان. (حدود هدّامة). ولها 3 حالات:</p>
             <ul className="list-disc list-inside mt-3 space-y-2 text-rose-900">
               <li><strong>محيطية مع محيطية:</strong> تغوص الأقدم (لأنها أبرد وأكثر كثافة) تحت الأحدث، وتنصهر لتكون <strong>جزر بركانية قوسية (Island Arcs)</strong> وأخاديد بحرية. (مثل جزر اليابان).</li>
               <li><strong>محيطية مع قارية:</strong> تغوص المحيطية (لأن كثافتها أعلى) تحت القارية. وينتج عن ذلك <strong>سلاسل جبلية بركانية</strong> على حافة القارة وأخاديد بحرية. (مثل جبال الأنديز).</li>
@@ -59,7 +59,7 @@ export default function Unit3_Lesson3() {
 
           <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
             <h4 className="font-bold text-emerald-800 text-xl border-b pb-2 mb-3">3. الحدود التحويلية/الجانبية (Transform Boundaries)</h4>
-            <p className="text-gray-700">تنزلق صفيحتان بمحاذاة بعضهما أفقياً. لا يتم بناء ولا تدمير للغلاف الصخري. (حدود محافظة).</p>
+            <p className="text-black">تنزلق صفيحتان بمحاذاة بعضهما أفقياً. لا يتم بناء ولا تدمير للغلاف الصخري. (حدود محافظة).</p>
             <p className="mt-2 text-emerald-900"><strong>الناتج:</strong> زلازل سطحية قوية وصدوع تحويلية (مثل صدع سان أندرياس، وصدع البحر الميت التحويلي الذي نعيش بمحاذاته في الأردن).</p>
           </div>
         </div>

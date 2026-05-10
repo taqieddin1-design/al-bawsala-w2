@@ -37,7 +37,7 @@ export default function Glossary() {
           <input 
             type="text" 
             placeholder="ابحث عن مصطلح أو تعريف..." 
-            className="flex-grow outline-none bg-transparent text-lg font-medium text-gray-700"
+            className="flex-grow outline-none bg-transparent text-lg font-medium text-black"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -51,7 +51,7 @@ export default function Glossary() {
               <BookMarked size={20} className="text-amber-500" /> 
               {item.term}
             </h4>
-            <p className="text-gray-700 leading-relaxed font-medium">
+            <p className="text-black leading-relaxed font-medium">
               {item.def}
             </p>
           </div>

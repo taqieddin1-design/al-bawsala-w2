@@ -18,10 +18,10 @@ export default function Intro() {
             </div>
           </div>
           
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white mb-8 tracking-tight drop-shadow-sm">البوصلة في علوم الأرض</h1>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white mb-8 tracking-tight drop-shadow-sm">البوصلة في علوم الأرض</h1>
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-sky-700 dark:text-sky-400 font-bold mb-16 tracking-wide drop-shadow-sm">الصف الثاني عشر (التوجيهي) - المسار الأكاديمي</h2>
           
-          <div className="mt-16 text-3xl md:text-4xl font-extrabold bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100 py-8 px-16 rounded-full inline-block shadow-md print:bg-white print:border print:border-gray-200">
+          <div className="mt-16 text-3xl md:text-4xl font-extrabold bg-gray-50 dark:bg-gray-800 text-black dark:text-gray-100 py-8 px-16 rounded-full inline-block shadow-md print:bg-white print:border print:border-gray-200">
               إعداد الأستاذ: <span className="text-emerald-600 dark:text-teal-400 drop-shadow-sm">تقي الدين جهاد أبو رزق</span>
           </div>
         </motion.div>
@@ -38,7 +38,7 @@ export default function Intro() {
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-sky-100 dark:bg-sky-900/30 rounded-full blur-3xl -ml-10 -mb-10 pointer-events-none"></div>
           
           <h3 className="text-4xl md:text-5xl font-black text-emerald-800 dark:text-emerald-400 mb-6 drop-shadow-sm leading-normal">الوحدة الأولى: الوقود الأحفوري والبيئة</h3>
-          <p className="text-gray-500 dark:text-gray-400 text-2xl font-bold">رحلة في مصادر الطاقة التي شكلت عالمنا</p>
+          <p className="text-black dark:text-gray-400 text-2xl font-bold">رحلة في مصادر الطاقة التي شكلت عالمنا</p>
         </div>
 
         <div className="no-print bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 p-8 rounded-2xl max-w-3xl mx-auto shadow-sm mt-12 w-full">

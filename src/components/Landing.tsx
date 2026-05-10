@@ -24,7 +24,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
       <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
         <button 
           onClick={() => setShowAuth(false)}
-          className="absolute top-6 right-6 flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors z-10 font-bold bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-sm"
+          className="absolute top-6 right-6 flex items-center gap-2 text-black dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors z-10 font-bold bg-white dark:bg-gray-800 px-4 py-2 rounded-full shadow-sm"
           dir="rtl"
         >
           <ArrowRight size={20} /> العودة للرئيسية
@@ -35,7 +35,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
   }
 
   return (
-    <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-200 overflow-hidden" dir="rtl">
+    <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 text-black dark:text-gray-100 font-sans transition-colors duration-200 overflow-hidden" dir="rtl">
       
       {/* Animated Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -72,7 +72,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
           {setDarkMode && (
             <button 
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-gray-700 rounded-full transition-all shadow-sm flex items-center justify-center"
+              className="p-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-black dark:text-gray-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-gray-700 rounded-full transition-all shadow-sm flex items-center justify-center"
               title={darkMode ? 'الوضع النهاري' : 'الوضع الليلي'}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -93,16 +93,16 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
           <div className="inline-block px-6 py-2.5 bg-emerald-600 dark:bg-emerald-700 text-white rounded-full text-lg md:text-xl font-extrabold shadow-md shadow-emerald-500/30 animate-pulse-slow">
             المنصة التعليمية الأولى لمادة علوم الأرض
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-black dark:text-white">
             بوصلتك نحو <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">التفوق في مادة علوم الأرض</span>
           </h1>
           <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gray-50 dark:bg-gray-800/80 rounded-2xl border border-gray-100 dark:border-gray-700/50 shadow-sm">
             <span className="flex h-3 w-3 rounded-full bg-emerald-500"></span>
-            <p className="text-lg md:text-xl font-bold text-gray-800 dark:text-gray-200">
+            <p className="text-lg md:text-xl font-bold text-black dark:text-gray-200">
               بإشراف الأستاذ: <span className="text-emerald-600 dark:text-teal-400">تقي الدين جهاد أبو رزق</span>
             </p>
           </div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg">
+          <p className="text-lg text-black dark:text-gray-300 leading-relaxed max-w-lg">
             رحلة ممتعة وتفاعلية لفهم الظواهر الجيولوجية، التغير المناخي، والبيئة المحيطة بك من خلال دروس مبسطة، صور توضيحية، وتمارين تفاعلية متطورة.
           </p>
           
@@ -128,7 +128,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
                 <Book size={24} />
               </div>
               <h3 className="font-bold text-lg dark:text-gray-100 leading-tight">دوسية البوصلة<br/>في علوم الأرض</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">محتوى متكامل وشامل لضمان تفوقك في المادة.</p>
+              <p className="text-sm text-black dark:text-gray-400">محتوى متكامل وشامل لضمان تفوقك في المادة.</p>
             </div>
             
             <div 
@@ -139,7 +139,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
                 <GraduationCap size={24} />
               </div>
               <h3 className="font-bold text-lg dark:text-gray-100 leading-tight">الاختبارات<br/>الإلكترونية</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">اختبر معلوماتك وقيم مستواك من خلال اختبارات تفاعلية.</p>
+              <p className="text-sm text-black dark:text-gray-400">اختبر معلوماتك وقيم مستواك من خلال اختبارات تفاعلية.</p>
             </div>
             
             <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col gap-4 transform translate-y-4 transition-transform hover:-translate-y-2">
@@ -147,7 +147,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
                 <BookOpen size={24} />
               </div>
               <h3 className="font-bold text-lg dark:text-gray-100">دروس تفاعلية</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">محتوى غني بالصور، المقارنات، وأمثلة محلولة خطوة بخطوة.</p>
+              <p className="text-sm text-black dark:text-gray-400">محتوى غني بالصور، المقارنات، وأمثلة محلولة خطوة بخطوة.</p>
             </div>
             
             <div className="bg-emerald-600 dark:bg-emerald-700 p-6 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center text-white gap-3 transition-transform hover:-translate-y-2">
@@ -163,7 +163,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
       <section className="relative z-10 max-w-7xl mx-auto px-6 pb-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">أقسام المنصة</h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">تصفح محتوى المنصة وابدأ رحلتك التعليمية. بعض الأقسام تتطلب تسجيل الدخول للوصول إليها.</p>
+          <p className="text-black dark:text-gray-400 text-lg max-w-2xl mx-auto">تصفح محتوى المنصة وابدأ رحلتك التعليمية. بعض الأقسام تتطلب تسجيل الدخول للوصول إليها.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -175,7 +175,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
               <Book size={32} />
             </div>
             <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">دوسية البوصلة في علوم الأرض</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">دروس شاملة، أمثلة توضيحية، ومحتوى متكامل لضمان تفوقك في المادة مع تجربة قراءة ممتعة وتفاعلية.</p>
+            <p className="text-black dark:text-gray-400 mb-6 leading-relaxed">دروس شاملة، أمثلة توضيحية، ومحتوى متكامل لضمان تفوقك في المادة مع تجربة قراءة ممتعة وتفاعلية.</p>
             <div className="flex items-center text-emerald-600 dark:text-emerald-400 font-bold group-hover:translate-x-[-8px] transition-transform w-fit rtl:group-hover:translate-x-2">
               <span className="ml-2">تصفح الدوسية</span>
               <ArrowRight size={20} className="transform rotate-180" />
@@ -190,7 +190,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
               <GraduationCap size={32} />
             </div>
             <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">الاختبارات الإلكترونية</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">اختبر معلوماتك وقيم مستواك من خلال مجموعة متنوعة من الاختبارات التفاعلية المصممة لقياس فهمك بدقة.</p>
+            <p className="text-black dark:text-gray-400 mb-6 leading-relaxed">اختبر معلوماتك وقيم مستواك من خلال مجموعة متنوعة من الاختبارات التفاعلية المصممة لقياس فهمك بدقة.</p>
             <div className="flex items-center text-sky-600 dark:text-sky-400 font-bold group-hover:translate-x-[-8px] transition-transform w-fit rtl:group-hover:translate-x-2">
               <span className="ml-2">ابدأ الاختبارات</span>
               <ArrowRight size={20} className="transform rotate-180" />
@@ -202,7 +202,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
       {/* Footer */}
       <footer className="z-10 relative mt-12 pb-8 border-t border-gray-200 dark:border-gray-800 pt-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
-          <p className="text-gray-700 dark:text-gray-300 font-bold text-center text-lg">
+          <p className="text-black dark:text-gray-300 font-bold text-center text-lg">
             يسعدني زيارتكم ومتابعتكم لحساباتي!
           </p>
           <div className="flex items-center gap-6">
@@ -227,7 +227,7 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
               <Facebook size={28} />
             </a>
           </div>
-          <p className="text-center text-gray-500 dark:text-gray-500 text-sm mt-4">
+          <p className="text-center text-black dark:text-gray-500 text-sm mt-4">
             جميع الحقوق محفوظة &copy; منصة البوصلة التعليمية
           </p>
         </div>

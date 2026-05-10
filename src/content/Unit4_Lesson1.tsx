@@ -43,21 +43,21 @@ export default function Unit4_Lesson1() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white border rounded shadow p-4">
             <h5 className="font-bold text-rose-700 text-lg mb-2 border-b pb-1">1. المَيْل (Dip)</h5>
-            <p className="text-gray-700">الزاوية المحصورة بين سطح الطبقة المائل والمستوى الأفقي (تتراوح بين 0ْ للأفقية و 90ْ للرأسية).</p>
+            <p className="text-black">الزاوية المحصورة بين سطح الطبقة المائل والمستوى الأفقي (تتراوح بين 0ْ للأفقية و 90ْ للرأسية).</p>
           </div>
           <div className="bg-white border rounded shadow p-4">
             <h5 className="font-bold text-sky-700 text-lg mb-2 border-b pb-1">2. اتجاه المَيْل</h5>
-            <p className="text-gray-700">الاتجاه الجغرافي الذي تميل نحوه الطبقة نحو الأسفل. (مثلاً: تميل شمالاً، أو جنوب شرق).</p>
+            <p className="text-black">الاتجاه الجغرافي الذي تميل نحوه الطبقة نحو الأسفل. (مثلاً: تميل شمالاً، أو جنوب شرق).</p>
           </div>
           <div className="bg-white border rounded shadow p-4">
             <h5 className="font-bold text-emerald-700 text-lg mb-2 border-b pb-1">3. المَضْرِب (Strike)</h5>
-            <p className="text-gray-700">الخط الناتج من تقاطع الطبقة المائلة مع المستوى الأفقي. <strong>وهو دائماً متعامد (يصنع زاوية 90 درجة) مع اتجاه المَيْل.</strong></p>
+            <p className="text-black">الخط الناتج من تقاطع الطبقة المائلة مع المستوى الأفقي. <strong>وهو دائماً متعامد (يصنع زاوية 90 درجة) مع اتجاه المَيْل.</strong></p>
           </div>
         </div>
 
         <div className="mt-6 bg-amber-50 p-4 rounded-lg">
           <p className="font-bold text-amber-900">💡 تلميح رياضي للبوصلة الجيولوجية:</p>
-          <p className="text-gray-800 mt-2">
+          <p className="text-black mt-2">
             إذا عرفنا <strong>اتجاه الميل</strong>، يمكننا استخراج المضرب بسهولة! فالمضرب خط يمتد في اتجاهين متعاكسين وتعامد مع الميل (± 90ْ).<br/>
             مثال: إذا كان اتجاه الميل 135ْ (جنوب شرق).<br/>
             المضرب الصغير = 135 - 90 = 45ْ (شمال شرق).<br/>
@@ -109,7 +109,7 @@ export default function Unit4_Lesson1() {
 
             <div className="mt-4 pt-4 border-t border-sky-100">
                 <p className="text-lg mb-2"><strong>حل دوائر الصفحة (130):</strong></p>
-                <ol className="list-decimal list-inside space-y-2 font-medium text-gray-700">
+                <ol className="list-decimal list-inside space-y-2 font-medium text-black">
                 <li>ب. الطبوغرافية.</li>
                 <li>جـ. مقياس الرسم.</li>
                 <li>ب. نسبي. (لأنه مكتوب 1سم = 5كم وهذا يعبر عن مقياس لفظي حول إلى نسبي). ولكن بالنظر للكتاب هو مقياس كتابي/لفظي (أ) لأنه مكتوب بالكلمات! <strong>الإجابة: أ (كتابي)</strong>.</li>

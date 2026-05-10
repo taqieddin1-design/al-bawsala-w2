@@ -12,7 +12,7 @@ export default function Unit4_Review() {
       />
 
       <ConceptBox title="الإثراء والتوسّع: استكشاف اليورانيوم في الأردن" icon={Award}>
-        <p className="text-lg leading-relaxed text-gray-800">
+        <p className="text-lg leading-relaxed text-black">
           استطاع علماؤنا الأردنيون باستخدام <strong>المسح الإشعاعي הגوي</strong> التقاط قيم إشعاعية شاذة في منطقة "وسط الأردن". بعد ذلك، نزل الخبراء وأجروا تنقيبات ومسوح جيوكيميائية بفرز وحفر الخنادق، ومسوح جيوفيزيائية عميقة بأجهزة الغاما.<br/>
           <strong>النتيجة المفرحة؟</strong> احتياطات تقدر بـ <strong> 41,000 طن </strong> من اليورانيوم (U3O8)! مما يضع الأردن كمالك لنحو 1% من احتياطي اليورانيوم العالمي القابل للاستخراج! هذه ثروة مستقبلية كفيلة بنقل واقع الطاقة الأردنية إذا تم استثمارها بالشكل المستدام والتقني الكامل!
         </p>
@@ -22,7 +22,7 @@ export default function Unit4_Review() {
         <h4 className="font-bold text-rose-800 flex items-center gap-2 text-2xl mb-3">
           <AlertCircle size={28} /> تهنئة حارة!
         </h4>
-        <p className="text-xl leading-relaxed text-gray-800 font-medium">
+        <p className="text-xl leading-relaxed text-black font-medium">
           عزيزي طالب التوجيهي، لقد وصلت الآن لخط النهاية! أحييك على صبرك وهمتك العالية. هذه آخر أسئلة مراجعة سنحلها معاً. تذكر دائماً أن "البوصلة" ترشدك، ولكن إرادتك هي المحرك الحقيقي. وفقك الله في امتحاناتك! 🎓
         </p>
       </div>
@@ -32,7 +32,7 @@ export default function Unit4_Review() {
         title="حل السؤال الأول (ص 151) - الدوائر"
         question="أضع دائرة حول رمز الإجابة الصحيحة:"
         answer={
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-800 font-medium">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-black font-medium">
             <div>1. ب (مائلة) إذا كانت خطوط الكنتور تتقاطع مع الطبقات فهي طبقات مائلة. * تصحيح من الكتاب: الجواب هو ب من خصائصها أنها منحنيات مغلقة (وليست مفتوحة النهاية ولا تتقاطع). الجواب <strong>(أ. منحنيات مغلقة لا تتقاطع مع بعضها). لكن الخيارات: </strong> الإجابة هي أن القيم المغلقة تدل على قمم والجرف، والإجابة الدقيقة للخيارات: (ب) لـ سؤال ٢ وليس ١. <strong>جواب ١ من خصائص خطوط الكنتور: (أ) منحنيات مغلقة، لكن ليس في الخيارات.</strong></div>
             <div>* <strong>حل وتوضيح دوائر ص 151:</strong></div>
             <div><strong>1. خصائص المنحنيات:</strong> (د) القيمة الموجبة والمغلقة تدل على الارتفاع فوق سطح البحر.</div>
@@ -53,7 +53,7 @@ export default function Unit4_Review() {
         title="حل تتمة الدوائر (السؤال 10 للآخر - ص 152)"
         question="تكملة ضع دائرة:"
         answer={
-          <div className="grid grid-cols-1 gap-4 text-gray-800 font-medium">
+          <div className="grid grid-cols-1 gap-4 text-black font-medium">
             <div><strong>10. خام الذهب:</strong> العناصر الدالة عليه الزئبق أو الزرنيخ (جـ. الزئبق).</div>
             <div><strong>11. Restoration (الترميم):</strong> (ب) إعادة الأرض لحالتها وزراعتها كالنظام الطبيعي.</div>
             <div><strong>12. Re-Use (إعادة الاستخدام):</strong> للمقالع والأراضي (أ. محميات وحدائق وخزانات مائية وبحيرات).</div>
@@ -69,7 +69,7 @@ export default function Unit4_Review() {
         title="حل السؤال الثاني (املأ الفراغ) والسؤال الثالث والرابع"
         question="أسئلة المفاهيم والتحليل:"
         answer={
-          <div className="space-y-5 text-gray-800 font-medium">
+          <div className="space-y-5 text-black font-medium">
             <p><strong>س2/ الفراغات:</strong><br/>
               1. الخريطة الطبوغرافية.<br/>
               2. المَضْرِب (Strike).<br/>

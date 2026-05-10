@@ -39,9 +39,9 @@ export const ConceptBox = ({ title, children, icon: Icon = Lightbulb }: { title:
   <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 my-6 prevent-break">
     <div className="flex items-center gap-3 mb-4 pb-3 border-b border-gray-100">
       <Icon className="text-sky-500" size={28} />
-      <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
+      <h3 className="text-2xl font-bold text-black">{title}</h3>
     </div>
-    <div className="text-gray-700 leading-loose text-lg">
+    <div className="text-black leading-loose text-lg">
       {children}
     </div>
   </div>
@@ -85,7 +85,7 @@ export const ExerciseBox = ({
           </div>
           <div className="flex-grow">
             <h4 className={`font-bold text-lg mb-2 ${style.text}`}>{title || style.title}</h4>
-            <div className="text-gray-800 font-medium text-lg leading-relaxed">
+            <div className="text-black font-medium text-lg leading-relaxed">
               {question}
             </div>
           </div>
@@ -103,14 +103,14 @@ export const ExerciseBox = ({
         
         {hasMath && (
            <div className="hidden print:block w-full h-64 bg-white border-t border-dashed border-gray-200 p-4">
-              <p className="text-gray-400 text-sm italic">مساحة مخصصة للحل...</p>
+              <p className="text-black text-sm italic">مساحة مخصصة للحل...</p>
            </div>
         )}
 
         <div className={`${isOpen ? 'block' : 'hidden'} ${hasMath ? 'print:hidden' : 'print:block'} px-6 py-5 bg-emerald-50/30`}>
           <div className="flex gap-3 items-start">
             <div className="text-emerald-600 font-bold mt-1">✓ الحل:</div>
-            <div className="text-gray-800 flex-grow leading-relaxed font-medium">
+            <div className="text-black flex-grow leading-relaxed font-medium">
               {answer}
             </div>
           </div>
@@ -125,14 +125,14 @@ export const LessonHeader = ({ number, title, objective, outcomes, mainIdea }: {
     <div className="inline-block bg-sky-600 text-white font-bold px-6 py-2 rounded-full mb-4 shadow-md">
       الدرس {number}
     </div>
-    <h1 className="text-4xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">{title}</h1>
+    <h1 className="text-4xl md:text-4xl font-black text-black mb-6 leading-tight">{title}</h1>
     {objective && (
-      <p className="max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed font-medium bg-white p-4 rounded-xl border border-gray-100 shadow-sm mb-6">
+      <p className="max-w-2xl mx-auto text-xl text-black leading-relaxed font-medium bg-white p-4 rounded-xl border border-gray-100 shadow-sm mb-6">
         🎯 <span className="font-bold">الهدف:</span> {objective}
       </p>
     )}
     {mainIdea && (
-      <div className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed font-medium bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-right mb-6">
+      <div className="max-w-3xl mx-auto text-lg text-black leading-relaxed font-medium bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-right mb-6">
          <div className="flex items-center gap-2 mb-4">
           <span className="text-2xl">💡</span>
           <h3 className="font-bold text-xl bg-amber-200 text-gray-900 px-3 py-1 rounded-md">الفكرة الرئيسة</h3>
@@ -141,7 +141,7 @@ export const LessonHeader = ({ number, title, objective, outcomes, mainIdea }: {
       </div>
     )}
     {outcomes && (
-      <div className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed font-medium bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-right">
+      <div className="max-w-3xl mx-auto text-lg text-black leading-relaxed font-medium bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-right">
         <div className="flex items-center gap-2 mb-4">
           <span className="text-2xl">🎯</span>
           <h3 className="font-bold text-xl bg-yellow-200 text-gray-900 px-3 py-1 rounded-md">نتاجات التعلّم</h3>

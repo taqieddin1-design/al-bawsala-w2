@@ -68,7 +68,7 @@ export default function SectionWrapper({ id, title, children }: SectionWrapperPr
             className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium shadow-sm transition-all text-sm border
               ${isDone 
                 ? 'bg-emerald-100 text-emerald-800 border-emerald-200 hover:bg-emerald-200 dark:bg-emerald-900 dark:text-emerald-100 dark:border-emerald-700' 
-                : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700'
+                : 'bg-white text-black border-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700'
               }`}
           >
             {isDone ? <CheckCircle size={18} className="text-emerald-600 dark:text-emerald-400" /> : <Circle size={18} />}

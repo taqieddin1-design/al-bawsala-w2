@@ -39,7 +39,7 @@ export default function Unit4_Lesson2() {
                 <th className="p-3 border-b border-sky-700">الأعماق المقيسة</th>
               </tr>
             </thead>
-            <tbody className="text-gray-800 divid-y divide-gray-200">
+            <tbody className="text-black divid-y divide-gray-200">
               <tr className="hover:bg-sky-50 transition-colors">
                 <td className="p-3 font-bold text-sky-800 align-top">المسح المغناطيسي</td>
                 <td className="p-3">المعادن المغناطيسية (الماغنيتيت)، والصخور فوق القاعدية الغنية بالحديد.</td>
@@ -76,7 +76,7 @@ export default function Unit4_Lesson2() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="bg-emerald-50 p-4 border border-emerald-200 rounded-lg">
             <h5 className="font-bold text-emerald-800 text-xl border-b border-emerald-200 pb-2 mb-2">العتبة (Threshold) والتشتت</h5>
-            <p className="text-gray-700">
+            <p className="text-black">
               <strong>العتبة:</strong> هي القيمة التي تفصل بين التراكيز "الطبيعية العادية" والتراكيز "الشاذة" لوجود الخام.<br/><br/>
               <strong>هالات التشتت (Dispersion Halos):</strong> انتقال الخام حول المصدر الأساسي عبر التجوية والمياه الحرمائية مكوناً تدرجاً دائرياً بالتراكيز. تفيدنا كـ"دليل تتبع" ضخم يدل على مكان المركز.
             </p>
@@ -84,7 +84,7 @@ export default function Unit4_Lesson2() {
           
           <div className="bg-rose-50 p-4 border border-rose-200 rounded-lg">
             <h5 className="font-bold text-rose-800 text-xl border-b border-rose-200 pb-2 mb-2">القيم الشاذة (Anomalies)</h5>
-            <p className="text-gray-700">
+            <p className="text-black">
               إذا حللنا العينات وصادفنا تراكيز عالية غير معتادة (أعلى من العتبة بكثير)، فهذه تسمى <strong>شذوذ جيوكيميائي موجب</strong> ويدل على وجود خام! <br/><br/>
               <strong>العناصر الدالة:</strong> بعض العناصر تكون أوضح للرصد وتدلنا على الذهب الثمين. وجود (الزئبق، أو الزرنيخ، أو النحاس) بتراكيز شاذة هو <strong>دليل</strong> غير مباشر على وجود הذهب!
             </p>
@@ -123,7 +123,7 @@ export default function Unit4_Lesson2() {
 
             <div className="mt-4 pt-4 border-t border-sky-100">
               <h5 className="font-bold text-sky-800 mb-2">6. حل دوائر الصفحة (141):</h5>
-              <ol className="list-decimal list-inside space-y-1 font-medium text-gray-700">
+              <ol className="list-decimal list-inside space-y-1 font-medium text-black">
                 <li>جـ. الفوسفات (موجود بكثرة في الأردن وهو لافلزي).</li>
                 <li>جـ. الطرق الجيوفيزيائية (لأنها في مرحلة الاستكشاف وليس التنقيب الأولي).</li>
                 <li>أ. قيم موجبة طبيعية ... كلا، الخطأ في أ ب، الإجابة هي: <strong>جـ. قيم أكبر من القيم الطبيعية الموجودة في المنطقة.</strong></li>

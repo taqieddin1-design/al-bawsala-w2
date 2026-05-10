@@ -45,22 +45,22 @@ export default function Unit3_Lesson1() {
         <div className="space-y-4">
           <div className="border-r-4 border-emerald-500 bg-white p-5 rounded shadow-sm">
             <h4 className="font-bold text-emerald-800 text-xl mb-2">1. تطابق حواف القارات (Fit of Continents Edges):</h4>
-            <p className="text-gray-700 text-lg">تطابق شبه مثالي بين حواف قارة إفريقيا الغربية وحواف أمريكا الجنوبية الشرقية كقطعة البازل. التآكل والحت هو ما جعل التطابق غير كامل 100%.</p>
+            <p className="text-black text-lg">تطابق شبه مثالي بين حواف قارة إفريقيا الغربية وحواف أمريكا الجنوبية الشرقية كقطعة البازل. التآكل والحت هو ما جعل التطابق غير كامل 100%.</p>
           </div>
 
           <div className="border-r-4 border-amber-500 bg-white p-5 rounded shadow-sm">
             <h4 className="font-bold text-amber-800 text-xl mb-2">2. تشابه الأحافير (Matching Fossils):</h4>
-            <p className="text-gray-700 text-lg">إيجاد أحفورة لزاحف صغير يعيش بالمياه العذبة يسمى <strong>الميزوسورس (Mesosaurus)</strong> في كل من أمريكا الجنوبية وإفريقيا فقط! ولا يمكن لهذا الحيوان السباحة عبر المحيط الأطلسي المالح، مما يدل على اتصال القارتين قديماً.</p>
+            <p className="text-black text-lg">إيجاد أحفورة لزاحف صغير يعيش بالمياه العذبة يسمى <strong>الميزوسورس (Mesosaurus)</strong> في كل من أمريكا الجنوبية وإفريقيا فقط! ولا يمكن لهذا الحيوان السباحة عبر المحيط الأطلسي المالح، مما يدل على اتصال القارتين قديماً.</p>
           </div>
 
           <div className="border-r-4 border-indigo-500 bg-white p-5 rounded shadow-sm">
             <h4 className="font-bold text-indigo-800 text-xl mb-2">3. تشابه أنواع الصخور والتراكيب (Rock Types):</h4>
-            <p className="text-gray-700 text-lg">امتداد السلاسل الجبلية بنفس العمر ونفس نوع الصخور عبر القارات. (مثل: جبال الأبلاش في أمريكا الشمالية والجبال الكالدونية في أوروبا) يبدوان كسلسلة واحدة قُطعت.</p>
+            <p className="text-black text-lg">امتداد السلاسل الجبلية بنفس العمر ونفس نوع الصخور عبر القارات. (مثل: جبال الأبلاش في أمريكا الشمالية والجبال الكالدونية في أوروبا) يبدوان كسلسلة واحدة قُطعت.</p>
           </div>
 
           <div className="border-r-4 border-rose-500 bg-white p-5 rounded shadow-sm">
             <h4 className="font-bold text-rose-800 text-xl mb-2">4. المناخات القديمة (Ancient Climates):</h4>
-            <p className="text-gray-700 text-lg">وجود رسوبيات ومسارات جليدية أثرية في قارات حارة جداً اليوم! (مثل الهند وإفريقيا). ووجود فحم حجري (الذي يتطلب مناخاً استوائياً غابياً) في قارات متجمدة حالياً! (مثل بعض مناطق أمريكا الشمالية وأوروبا).</p>
+            <p className="text-black text-lg">وجود رسوبيات ومسارات جليدية أثرية في قارات حارة جداً اليوم! (مثل الهند وإفريقيا). ووجود فحم حجري (الذي يتطلب مناخاً استوائياً غابياً) في قارات متجمدة حالياً! (مثل بعض مناطق أمريكا الشمالية وأوروبا).</p>
           </div>
         </div>
       </ConceptBox>
@@ -68,7 +68,7 @@ export default function Unit3_Lesson1() {
       <ConceptBox title="الرفض المأساوي! (Rejection)" icon={XCircle}>
         <div className="bg-rose-50 border border-rose-200 p-6 rounded-xl">
             <p className="font-bold text-rose-800 mb-3 text-2xl">لماذا رفض العلماء العظماء نظرية فغنر رغم كل هذه الأدلة؟</p>
-            <p className="text-gray-1000 leading-relaxed text-lg">
+            <p className="text-black0 leading-relaxed text-lg">
             السبب القاصم كان عجز فغنر عن إيجاد أو تفسير <strong>"القوة المحركة" (آلية الحركة)</strong> المقنعة التي استطاعت دفع هذه الكتلة الهائلة من اليابسة. 
             <br/><br/>
             اقترح فغنر أن القوة هي (قوة الطرد المركزي) أو (جاذبية القمر). وسخر العلماء من ذلك لأن هذه القوى أضعف بملايين المرات من أن تحرك قارة صلبة تخترق قاع المحيط الصلب! مات فغنر دون أن يرى فرضيته تُتوّج كنظرية معتمدة.

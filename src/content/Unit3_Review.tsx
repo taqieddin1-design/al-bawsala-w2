@@ -44,7 +44,7 @@ export default function Unit3_Review() {
 
             <div className="bg-sky-50 p-4 rounded-xl border border-sky-100 mt-4">
                 <h5 className="font-bold text-sky-800 border-b border-sky-200 pb-2 mb-3">أسئلة الاختيار من متعدد:</h5>
-                <ol className="list-decimal list-inside space-y-2 font-medium text-gray-700">
+                <ol className="list-decimal list-inside space-y-2 font-medium text-black">
                     <li>أ (سحب الشريحة Slab Pull) هي القوة الأعظم لحركة الصفائح حسب النظريات الحديثة.</li>
                     <li>جـ (صخر قاعدي/بازلتي).</li>
                     <li>أ (سلاسل جبال قارية - اصطدام قاري).</li>

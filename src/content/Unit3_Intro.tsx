@@ -19,11 +19,11 @@ export default function Unit3_Intro() {
           </div>
         </div>
         
-        <h2 className="text-5xl font-black text-gray-900 mb-6 tracking-tight">الوحدة الثالثة: الصفائح التكتونية</h2>
+        <h2 className="text-5xl font-black text-black mb-6 tracking-tight">الوحدة الثالثة: الصفائح التكتونية</h2>
         <h3 className="text-2xl text-emerald-700 font-bold mb-10">Plate Tectonics</h3>
         
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-2xl mx-auto mb-10 mt-10">
-          <p className="text-gray-700 text-xl leading-relaxed text-center">
+          <p className="text-black text-xl leading-relaxed text-center">
             تتشكل العديد من المظاهر الجيولوجية ومنها: السلاسل الجبلية، والجبال البركانية، وظهور المحيطات، بفعل <strong>حركات الصفائح الأرضية</strong> المختلفة.
           </p>
         </div>

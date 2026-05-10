@@ -213,7 +213,7 @@ export default function Lesson1() {
             <div>
               <h5 className="font-bold text-indigo-700">5. حساب مكافئ ثاني أكسيد الكربون لتبريد 75 kg من غاز CFC-11 (GWP=6230).</h5>
               <div className="hidden print:block w-full h-48 bg-white border border-dashed border-gray-300 mt-2 p-2">
-                 <p className="text-gray-400 text-sm italic">مساحة مخصصة للحل... (تم نقل الإجابة لملحق المسائل)</p>
+                 <p className="text-black text-sm italic">مساحة مخصصة للحل... (تم نقل الإجابة لملحق المسائل)</p>
               </div>
               <div className="print:hidden">
                 <MathBox>

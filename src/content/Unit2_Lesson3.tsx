@@ -46,14 +46,14 @@ export default function Unit2_Lesson3() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-amber-50 p-4 border border-amber-200 rounded-lg">
             <h5 className="font-bold text-amber-800 text-lg border-b pb-2 mb-2 border-amber-200">حسب اتجاه التقوس:</h5>
-            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+            <ol className="list-decimal list-inside space-y-2 text-black">
               <li><strong>طية محدبة (Anticline):</strong> تتقوس الطبقات نحو الأعلى. الجناحان يميلان <strong>بعيداً</strong> عن المحور. الطبقات <strong>الأقدم</strong> في المركز.</li>
               <li><strong>طية مقعرة (Syncline):</strong> تتقوس الطبقات نحو الأسفل. الجناحان يميلان <strong>باتجاه</strong> المحور. الطبقات <strong>الأحدث</strong> في المركز.</li>
             </ol>
           </div>
           <div className="bg-sky-50 p-4 border border-sky-200 rounded-lg">
             <h5 className="font-bold text-sky-800 text-lg border-b pb-2 mb-2 border-sky-200">حسب زاويَة المستوى المحوري:</h5>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <ul className="list-disc list-inside space-y-2 text-black">
               <li><strong>متماثلة (Symmetrical):</strong> المستوى المحوري عمودي (زاوية 90ْ).</li>
               <li><strong>غير متماثلة (Asymmetrical):</strong> المستوى المحوري مائل، الجناحان بهما زوايا مختلفة.</li>
               <li><strong>مقلوبة (Overturned):</strong> زاوية ميل أحد الأجنحة تزيد عن 90ْ فتنقلب الطبقات.</li>
@@ -64,7 +64,7 @@ export default function Unit2_Lesson3() {
 
         <div className="bg-emerald-50 p-4 border border-emerald-200 rounded-lg mt-4">
           <h5 className="font-bold text-emerald-800 text-lg mb-2">القبة والحوض (Dome and Basin):</h5>
-          <p className="text-gray-700">
+          <p className="text-black">
             <strong>القبة (Dome):</strong> طيّة محدبة متماثلة تميل أجنحتها في جميع الاتجاهات عن المركز (كالقبة). الطبقات <strong>الأقدم</strong> في المركز بسبب الحت والتجوية للقمة.<br/>
             <strong>الحوض (Basin):</strong> طية مقعرة متماثلة تميل أجنحتها نحو المركز. الطبقات <strong>الأحدث</strong> في المركز (مثال: حوض البقعة في الأردن الذي كان أصلاً قبة وتآكلت لتشكل حوضاً!).
           </p>
@@ -107,7 +107,7 @@ export default function Unit2_Lesson3() {
 
             <div className="mt-4 pt-4 border-t border-sky-100">
                 <p className="text-lg mb-2"><strong>حل دوائر الصفحة (72):</strong></p>
-                <ol className="list-decimal list-inside space-y-2 font-medium text-gray-700">
+                <ol className="list-decimal list-inside space-y-2 font-medium text-black">
                 <li>جـ (جناح الطية). الحرف (D).</li>
                 <li>ب (المستوى المحوري). الحرف (C).</li>
                 <li>جـ (مقعرة وغير متماثلة).</li>

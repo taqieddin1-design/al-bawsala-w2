@@ -6,7 +6,23 @@
     <title>البوصلة في علوم الأرض</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f9fafb; font-family: system-ui, -apple-system, sans-serif;">
+        <div style="width: 48px; height: 48px; border: 4px solid #059669; border-bottom-color: transparent; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite;"></div>
+        <h2 style="margin-top: 20px; color: #059669; font-weight: bold; font-size: 1.25rem;">جاري التحميل...</h2>
+        <style>
+          @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          @media (prefers-color-scheme: dark) {
+            body > #root > div { background-color: #111827 !important; }
+            body > #root > div > h2 { color: #34d399 !important; }
+            body > #root > div > div { border-color: #34d399 !important; border-bottom-color: transparent !important; }
+          }
+        </style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

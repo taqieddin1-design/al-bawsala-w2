@@ -38,7 +38,7 @@ export default function Unit2_Lesson1() {
             </div>
             <div className="w-full md:w-1/3 bg-gray-100 p-4 rounded-xl text-center shadow-inner">
                 <span className="text-6xl mb-2 block">🪨</span>
-                <span className="font-bold text-gray-700">الإجهاد = السبب</span>
+                <span className="font-bold text-black">الإجهاد = السبب</span>
                 <br />
                 <span className="font-bold text-emerald-600">المطاوعة = النتيجة</span>
             </div>
@@ -79,7 +79,7 @@ export default function Unit2_Lesson1() {
       </ConceptBox>
 
       <ConceptBox title="أنواع الإجهاد (Types of Stress)" icon={Hammer}>
-        <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto text-center mb-10">
+        <p className="text-black leading-relaxed max-w-3xl mx-auto text-center mb-10">
           تختلف التراكيب الجيولوجية الناتجة عن مطاوعة الصخور الهشّة والصخور اللّدنِة باختلاف نوع الإجهاد المؤثّر فيها،
           إذ إن للإجهاد ثلاثة أنواع؛ اعتمادًا على اتّجاه القوّة المؤثّرة على الصّخر، وهي: الضّغط، والشّد، والقصّ.
           أنظر المخطط المفاهيمي الذي يبيّن أنواعًا مختلفة من الإجهاد.

@@ -19,14 +19,14 @@ export default function Unit2_Intro() {
           </div>
         </div>
         
-        <h2 className="text-5xl font-black text-gray-900 mb-6 tracking-tight">الوحدة الثانية: التراكيب الجيولوجية</h2>
+        <h2 className="text-5xl font-black text-black mb-6 tracking-tight">الوحدة الثانية: التراكيب الجيولوجية</h2>
         
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 max-w-2xl mx-auto mb-10 mt-10 relative">
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-100 text-amber-800 px-4 py-1 rounded-full font-bold text-sm">أفلا يتفكرون</div>
           <h3 className="text-3xl font-bold text-rose-800 mb-4 text-center !leading-relaxed" style={{fontFamily: "'Cairo', sans-serif"}}>
             {`" وَالْأَرْضِ ذَاتِ الصَّدْعِ "` }
           </h3>
-          <p className="text-gray-500 text-center font-medium">(سورة الطارق: الآية 12)</p>
+          <p className="text-black text-center font-medium">(سورة الطارق: الآية 12)</p>
         </div>
 
         <div className="text-right">
