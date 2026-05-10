@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Compass, BookOpen, Globe2, TrendingUp, ArrowRight, Book, GraduationCap, Facebook, Instagram, Sun, Moon } from 'lucide-react';
+import { Compass, BookOpen, Globe2, TrendingUp, ArrowRight, Book, GraduationCap, Facebook, Instagram, Linkedin, Sun, Moon } from 'lucide-react';
 import Auth from './Auth';
 
 interface LandingProps {
@@ -206,6 +206,16 @@ export default function Landing({ darkMode, setDarkMode }: LandingProps) {
             يسعدني زيارتكم ومتابعتكم لحساباتي!
           </p>
           <div className="flex items-center gap-6">
+            <a 
+              href="https://www.linkedin.com/in/taqi-eddin-abu-rezeq-112397159?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-[#0077b5] text-white rounded-2xl hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1"
+              aria-label="LinkedIn"
+              title="حساب لينكد إن"
+            >
+              <Linkedin size={28} />
+            </a>
             <a 
               href="https://www.instagram.com/taqi_eddin.aburezeq" 
               target="_blank" 

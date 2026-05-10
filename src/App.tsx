@@ -4,34 +4,54 @@ import { onAuthStateChanged, User, signOut } from 'firebase/auth';
 import Auth from './components/Auth';
 import Landing from './components/Landing';
 
-const Intro = lazy(() => import('./content/Intro'));
-const Lesson1 = lazy(() => import('./content/Lesson1'));
-const Lesson2 = lazy(() => import('./content/Lesson2'));
-const Lesson3 = lazy(() => import('./content/Lesson3'));
-const Review = lazy(() => import('./content/Review'));
+// Helper to retry loading chunks if they fail due to network or outdated cache
+const lazyWithRetries = (componentImport: () => Promise<any>) => {
+  return lazy(async () => {
+    try {
+      const component = await componentImport();
+      window.sessionStorage.setItem('page-has-been-force-refreshed', 'false');
+      return component;
+    } catch (error) {
+      const pageHasAlreadyBeenForceRefreshed = JSON.parse(
+        window.sessionStorage.getItem('page-has-been-force-refreshed') || 'false'
+      );
+      if (!pageHasAlreadyBeenForceRefreshed) {
+        window.sessionStorage.setItem('page-has-been-force-refreshed', 'true');
+        window.location.reload();
+      }
+      throw error;
+    }
+  });
+};
 
-const Unit2_Intro = lazy(() => import('./content/Unit2_Intro'));
-const Unit2_Lesson1 = lazy(() => import('./content/Unit2_Lesson1'));
-const Unit2_Lesson2 = lazy(() => import('./content/Unit2_Lesson2'));
-const Unit2_Lesson3 = lazy(() => import('./content/Unit2_Lesson3'));
-const Unit2_Review = lazy(() => import('./content/Unit2_Review'));
+const Intro = lazyWithRetries(() => import('./content/Intro'));
+const Lesson1 = lazyWithRetries(() => import('./content/Lesson1'));
+const Lesson2 = lazyWithRetries(() => import('./content/Lesson2'));
+const Lesson3 = lazyWithRetries(() => import('./content/Lesson3'));
+const Review = lazyWithRetries(() => import('./content/Review'));
 
-const Unit3_Intro = lazy(() => import('./content/Unit3_Intro'));
-const Unit3_Lesson1 = lazy(() => import('./content/Unit3_Lesson1'));
-const Unit3_Lesson2 = lazy(() => import('./content/Unit3_Lesson2'));
-const Unit3_Lesson3 = lazy(() => import('./content/Unit3_Lesson3'));
-const Unit3_Review = lazy(() => import('./content/Unit3_Review'));
+const Unit2_Intro = lazyWithRetries(() => import('./content/Unit2_Intro'));
+const Unit2_Lesson1 = lazyWithRetries(() => import('./content/Unit2_Lesson1'));
+const Unit2_Lesson2 = lazyWithRetries(() => import('./content/Unit2_Lesson2'));
+const Unit2_Lesson3 = lazyWithRetries(() => import('./content/Unit2_Lesson3'));
+const Unit2_Review = lazyWithRetries(() => import('./content/Unit2_Review'));
 
-const Unit4_Intro = lazy(() => import('./content/Unit4_Intro'));
-const Unit4_Lesson1 = lazy(() => import('./content/Unit4_Lesson1'));
-const Unit4_Lesson2 = lazy(() => import('./content/Unit4_Lesson2'));
-const Unit4_Lesson3 = lazy(() => import('./content/Unit4_Lesson3'));
-const Unit4_Review = lazy(() => import('./content/Unit4_Review'));
+const Unit3_Intro = lazyWithRetries(() => import('./content/Unit3_Intro'));
+const Unit3_Lesson1 = lazyWithRetries(() => import('./content/Unit3_Lesson1'));
+const Unit3_Lesson2 = lazyWithRetries(() => import('./content/Unit3_Lesson2'));
+const Unit3_Lesson3 = lazyWithRetries(() => import('./content/Unit3_Lesson3'));
+const Unit3_Review = lazyWithRetries(() => import('./content/Unit3_Review'));
 
-const Glossary = lazy(() => import('./content/Glossary'));
-const MathSolutions = lazy(() => import('./content/MathSolutions'));
+const Unit4_Intro = lazyWithRetries(() => import('./content/Unit4_Intro'));
+const Unit4_Lesson1 = lazyWithRetries(() => import('./content/Unit4_Lesson1'));
+const Unit4_Lesson2 = lazyWithRetries(() => import('./content/Unit4_Lesson2'));
+const Unit4_Lesson3 = lazyWithRetries(() => import('./content/Unit4_Lesson3'));
+const Unit4_Review = lazyWithRetries(() => import('./content/Unit4_Review'));
 
-import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap, Facebook, Instagram, FileDown, X, ExternalLink, Info } from 'lucide-react';
+const Glossary = lazyWithRetries(() => import('./content/Glossary'));
+const MathSolutions = lazyWithRetries(() => import('./content/MathSolutions'));
+
+import { Printer, LogOut, Moon, Sun, Book, ChevronRight, GraduationCap, Facebook, Instagram, Linkedin, FileDown, X, ExternalLink, Info } from 'lucide-react';
 import Comments from './components/Comments';
 import SectionWrapper from './components/SectionWrapper';
 import ProgressIndicator from './components/ProgressIndicator';
@@ -49,11 +69,29 @@ export default function App() {
   });
 
   useEffect(() => {
+    let isMounted = true;
+    
+    // Fallback timeout in case Firebase Auth initializing takes too long or fails
+    const authTimeout = setTimeout(() => {
+      if (isMounted) {
+        console.warn("إيقاف الانتظار: استغرق التحقق من المصادقة وقتًا طويلاً. (Firebase Auth Timeout)");
+        setLoading(false);
+      }
+    }, 8000); // 8 seconds timeout
+
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
+      if (isMounted) {
+        setUser(currentUser);
+        setLoading(false);
+        clearTimeout(authTimeout);
+      }
     });
-    return () => unsubscribe();
+    
+    return () => {
+      isMounted = false;
+      unsubscribe();
+      clearTimeout(authTimeout);
+    };
   }, []);
 
   useEffect(() => {
@@ -249,6 +287,16 @@ export default function App() {
             يسعدني زيارتكم ومتابعتكم لحساباتي!
           </p>
           <div className="flex items-center gap-6">
+            <a 
+              href="https://www.linkedin.com/in/taqi-eddin-abu-rezeq-112397159?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 bg-[#0077b5] text-white rounded-2xl hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1"
+              aria-label="LinkedIn"
+              title="حساب لينكد إن"
+            >
+              <Linkedin size={28} />
+            </a>
             <a 
               href="https://www.instagram.com/taqi_eddin.aburezeq" 
               target="_blank" 
